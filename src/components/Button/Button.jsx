@@ -10,3 +10,10 @@ const Button = ({ $type, $size, children, handleClick }) => {
 };
 
 export default Button;
+
+//?=========================
+// $type={'origin'} для стили для кнопки в Hero и Ок
+// $size={'hero'} width для кнопки Hero
+// $size={'form'} width для кнопки формы
+// $size={'choose'} width для кнопки карты
+// $size={'small''} width для кнопки Ок
