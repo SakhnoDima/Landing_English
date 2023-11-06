@@ -1,3 +1,14 @@
+import Container from './Container/Container';
+
 export const App = () => {
-  return <div>ok</div>;
+  return (
+    <>
+      <Container $colorize={true}>
+        <div>ok1</div>
+      </Container>
+      <Container>
+        <div>ok2</div>
+      </Container>
+    </>
+  );
 };
