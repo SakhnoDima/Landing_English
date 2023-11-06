@@ -10,7 +10,7 @@ export const StyledButton = styled.button`
     } else if ($width === 'form') {
       return '294px';
     } else if ($width === 'choose') {
-      return '239px';
+      return '278px';
     }
   }};
   height: 48px;
@@ -54,6 +54,7 @@ export const StyledButton = styled.button`
       }
     }};
     font-size: 20px;
+    height: 48px;
   }
   @media screen and (min-width: 1440px) {
     width: ${({ $width }) => {
@@ -64,8 +65,10 @@ export const StyledButton = styled.button`
       } else if ($width === 'form') {
         return '353px';
       } else if ($width === 'choose') {
-        return '264px';
+        return '239px';
       }
     }};
+    font-size: 24px;
+    height: 40px;
   }
 `;
