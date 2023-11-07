@@ -76,8 +76,8 @@ export const HeroDescription = styled.p`
 `;
 export const DescWrapper = styled.div`
   @media screen and (min-width: 768px) {
-    margin-bottom: 146px;
     max-width: ${({ $isOpen }) => ($isOpen ? '450px' : 'auto')};
+    margin-bottom: ${({ $isOpen }) => ($isOpen ? '30px' : '146px')};
   }
 `;
 export const ReadMoreBtn = styled.button`

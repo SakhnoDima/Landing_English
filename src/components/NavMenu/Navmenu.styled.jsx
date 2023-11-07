@@ -35,18 +35,6 @@ const Nav = styled(motion.div)`
   }
 `;
 
-const NavMenu = ({ children, onBackdropClick }) => {
-  return (
-    <Nav
-      onClick={e => onBackdropClick(e)}
-      initial={{ x: '100%' }}
-      animate={{ x: 0 }}
-    >
-      {children}
-    </Nav>
-  );
-};
-
 export const NavStyles = styled.nav`
   width: 100%;
   height: 100%;
@@ -72,5 +60,19 @@ export const UlComponent = styled.ul`
     }
   }
 `;
+
+const NavMenu = ({ children, onBackdropClick }) => {
+  return (
+    <Nav
+      onClick={e => onBackdropClick(e)}
+      initial={{ x: '100%' }}
+      animate={{ x: 0 }}
+      transition={{ type: 'just' }}
+      exit={{ x: '100%' }}
+    >
+      {children}
+    </Nav>
+  );
+};
 
 export default NavMenu;
