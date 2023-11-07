@@ -1,5 +1,11 @@
 const { default: styled } = require('styled-components');
 
+const obj = {
+  2: 'b',
+  3: 'c',
+  4: 'd',
+};
+
 export const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
@@ -9,40 +15,23 @@ export const StyledList = styled.ul`
 
   @media screen and (min-width: 768px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: ${({ $id }) =>
+      !$id ? "'a b' 'c d'" : "'a b''a c''a d'"};
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     width: 688px;
 
     .div1 {
-      grid-area: 1 / 1 / 2 / 2;
+      grid-area: ${({ $id }) => ($id === 1 ? 'a' : $id ? obj[$id] : 'a')};
     }
     .div2 {
-      grid-area: 1 / 2 / 2 / 3;
+      grid-area: ${({ $id }) => ($id === 2 ? 'a' : 'b')};
     }
     .div3 {
-      grid-area: 2 / 1 / 3 / 2;
+      grid-area: ${({ $id }) => ($id === 3 ? 'a' : 'c')};
     }
     .div4 {
-      grid-area: 2 / 2 / 3 / 3;
-    }
-
-    &.activeList {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      .div1 {
-        grid-area: 1 / 1 / 4 / 2;
-      }
-      .div2 {
-        grid-area: 1 / 2 / 2 / 3;
-      }
-      .div3 {
-        grid-area: 2 / 2 / 3 / 3;
-      }
-      .div4 {
-        grid-area: 3 / 2 / 4 / 3;
-      }
+      grid-area: ${({ $id }) => ($id === 4 ? 'a' : 'd')};
     }
   }
 
@@ -51,10 +40,6 @@ export const StyledList = styled.ul`
     flex-direction: row;
     justify-content: space-between;
     width: 1200px;
-
-    li {
-      transition: transform 0.3s;
-    }
   }
 `;
 
