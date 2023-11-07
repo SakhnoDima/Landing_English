@@ -4,10 +4,12 @@ import Container from 'components/Container/Container';
 
 const ClientSay = () => {
   return (
-    <Container>
-      <Comments />
-      <PriceCardsList />
-    </Container>
+    <section>
+      <Container>
+        <Comments />
+        <PriceCardsList />
+      </Container>
+    </section>
   );
 };
 
