@@ -1,14 +1,9 @@
-import Container from './Container/Container';
+import ClientSay from './ClientSay/ClientSay';
 
 export const App = () => {
   return (
     <>
-      <Container $colorize={true}>
-        <div>ok1</div>
-      </Container>
-      <Container>
-        <div>ok2</div>
-      </Container>
+      <ClientSay />
     </>
   );
 };
