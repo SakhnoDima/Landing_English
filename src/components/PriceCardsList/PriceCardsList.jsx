@@ -14,6 +14,7 @@ import {
 } from './PriceCardsList.styled';
 
 const PriceCardsList = () => {
+  const [isActiveid, setIsActiveId] = useState(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [showDetails, setShowDetails] = useState({
     specificGoal: false,
@@ -27,7 +28,6 @@ const PriceCardsList = () => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -37,9 +37,6 @@ const PriceCardsList = () => {
 
   const toggleDetails = (card, cardElement) => {
     const windowSize = window.innerWidth;
-    const list = document.querySelector('.list');
-
-    list.classList.add('activeList');
 
     if (windowSize >= 768 && windowSize < 1440) {
       setShowDetails({
@@ -73,7 +70,7 @@ const PriceCardsList = () => {
       <Flipper
         flipKey={`${showDetails.specificGoal}${showDetails.lazyStart}${showDetails.tiredLessons}${showDetails.maternityLeave}`}
       >
-        <StyledList className="list">
+        <StyledList $id={isActiveid} className="list">
           <Flipped flipId="specificGoal">
             <StyledCard
               className="StyledCard div1"
@@ -105,12 +102,13 @@ const PriceCardsList = () => {
                 </div>
               ) : (
                 <StyledReadMore
-                  onClick={() =>
+                  onClick={() => {
                     toggleDetails(
                       'specificGoal',
                       document.querySelector('.StyledCard:nth-child(1)')
-                    )
-                  }
+                    );
+                    setIsActiveId(1);
+                  }}
                 >
                   Read more
                 </StyledReadMore>
@@ -148,12 +146,13 @@ const PriceCardsList = () => {
                 </div>
               ) : (
                 <StyledReadMore
-                  onClick={() =>
+                  onClick={() => {
                     toggleDetails(
                       'lazyStart',
                       document.querySelector('.StyledCard:nth-child(2)')
-                    )
-                  }
+                    );
+                    setIsActiveId(2);
+                  }}
                 >
                   Read more
                 </StyledReadMore>
@@ -191,12 +190,13 @@ const PriceCardsList = () => {
                 </div>
               ) : (
                 <StyledReadMore
-                  onClick={() =>
+                  onClick={() => {
                     toggleDetails(
                       'tiredLessons',
                       document.querySelector('.StyledCard:nth-child(3)')
-                    )
-                  }
+                    );
+                    setIsActiveId(3);
+                  }}
                 >
                   Read more
                 </StyledReadMore>
@@ -233,12 +233,13 @@ const PriceCardsList = () => {
                 </div>
               ) : (
                 <StyledReadMore
-                  onClick={() =>
+                  onClick={() => {
                     toggleDetails(
                       'maternityLeave',
                       document.querySelector('.StyledCard:nth-child(4)')
-                    )
-                  }
+                    );
+                    setIsActiveId(4);
+                  }}
                 >
                   Read more
                 </StyledReadMore>
