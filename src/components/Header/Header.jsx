@@ -4,6 +4,7 @@ import { ReactComponent as Logo } from '../../images/svg/logo.svg';
 import { ReactComponent as BurgerMenu } from '../../images/svg/menu.svg';
 import HeaderComponent from './Header.styled';
 import Nav from '../NavMenu/NavMenu';
+import { AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,14 @@ const Header = () => {
 
   return (
     <>
-      {isOpen && <Nav toggleMenu={toggleNav} />}
+      <AnimatePresence>
+        {isOpen && (
+          <Nav
+            toggleMenu={toggleNav}
+          />
+        )}
+      </AnimatePresence>
+
       <HeaderComponent>
         <Logo className="logo" />
         <BurgerMenu onClick={toggleNav} className="menu" />

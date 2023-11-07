@@ -2,13 +2,15 @@ import { useEffect } from 'react';
 
 import NavMenu, { NavStyles, UlComponent } from './Navmenu.styled';
 import { ReactComponent as Close } from '../../images/svg/x.svg';
+import { sectionLinks } from 'constants/constants';
 
-const Nav = ({ toggleMenu }) => {
+const Nav = ({ toggleMenu, isVisible }) => {
   const handleBackdropClick = e => {
     if (e.target === e.currentTarget) toggleMenu();
   };
 
   useEffect(() => {
+    document.body.style.overflow = 'hidden';
     const handleKeyDown = e => {
       if (e.code === 'Escape') toggleMenu();
     };
@@ -17,32 +19,20 @@ const Nav = ({ toggleMenu }) => {
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'auto';
     };
   });
 
   return (
-    <NavMenu onBackdropClick={handleBackdropClick}>
+    <NavMenu onBackdropClick={handleBackdropClick} isVisible={isVisible}>
       <Close onClick={toggleMenu} className="close-btn" />
       <NavStyles>
         <UlComponent>
-          <li onClick={toggleMenu}>
-            <a href="#home">How does it work?</a>
-          </li>
-          <li onClick={toggleMenu}>
-            <a href="#home">Why me?</a>
-          </li>
-          <li onClick={toggleMenu}>
-            <a href="#home">What my clients say</a>
-          </li>
-          <li onClick={toggleMenu}>
-            <a href="#home">Clients</a>
-          </li>
-          <li onClick={toggleMenu}>
-            <a href="#home">My service</a>
-          </li>
-          <li onClick={toggleMenu}>
-            <a href="#home">Contact me</a>
-          </li>
+          {sectionLinks.map(({ link, text }) => (
+            <li key={link} onClick={toggleMenu}>
+              <a href={link}>{text}</a>
+            </li>
+          ))}
         </UlComponent>
       </NavStyles>
     </NavMenu>
