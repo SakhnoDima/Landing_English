@@ -2,8 +2,8 @@ import piotr from 'images/review_1.png';
 import konradSenior from 'images/review_2.png';
 import paweł from 'images/review_3.png';
 import natalia from 'images/review_4.png';
-import anna from 'images/svg/default-f.svg';
-import ignacy from 'images/svg/default-m.svg';
+import anna from 'images/svg/default-female.svg';
+import ignacy from 'images/svg/default-male.svg';
 import kinga from 'images/svg/default-f.svg';
 import konrad from 'images/svg/default-m.svg';
 

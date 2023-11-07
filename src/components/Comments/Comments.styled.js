@@ -1,4 +1,8 @@
 import styled from 'styled-components';
+
+import { ReactComponent as ArrowLeft } from 'images/svg/arrow-left.svg';
+import { ReactComponent as ArrowRight } from 'images/svg/arrow-right.svg';
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -8,27 +12,58 @@ export const Title = styled.h2`
   display: flex;
   justify-content: center;
   height: 52px;
-  font-weight: 500;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 48px;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
 `;
 
 export const WrapperMain = styled.div`
   position: relative;
+  display: flex;
   border-radius: 16px;
   border: 1px solid var(--background-card-dark-blue);
 
-  transform: scale(0.5);
+  transform: scale(0.75);
   transition: transform 300ms;
-  opacity: 0.5;
+  filter: blur(3px);
 
   background: var(--background-color-white);
   height: ${({ $isExpanded }) => ($isExpanded ? '500px' : '403px')};
-
-  display: none;
+  opacity: 0;
 
   &.activeSlide {
     transform: scale(1);
     opacity: 1;
-    display: block;
+    filter: blur(0px);
+    margin-bottom: 124px;
+    opacity: 1;
+  }
+
+  @media (min-width: 768px) {
+    height: ${({ $isExpanded }) => ($isExpanded ? '500px' : '305px')};
+
+    opacity: 1;
+    &.activeSlide {
+      width: 451px;
+      margin-bottom: 139px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    height: ${({ $isExpanded }) => ($isExpanded ? '500px' : '294px')};
+
+    &.activeSlide {
+      margin-bottom: 169px;
+    }
   }
 `;
 
@@ -36,6 +71,14 @@ export const WrapperPersonal = styled.div`
   display: flex;
   margin: 16px auto 23px 24px;
   gap: 35px;
+
+  @media (min-width: 768px) {
+    padding: 5px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 1px;
+  }
 `;
 
 export const WrapperInfo = styled.div`
@@ -67,10 +110,19 @@ export const TextArea = styled.div`
   position: ${({ $isExpanded }) => ($isExpanded ? 'absolute' : 'relative')};
   height: ${({ $isExpanded }) => ($isExpanded ? '100%' : '305px')};
   transition: height 0.5s ease-in-out;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    height: ${({ $isExpanded }) => ($isExpanded ? '100%' : '198px')};
+  }
+
+  @media (min-width: 1440px) {
+    height: ${({ $isExpanded }) => ($isExpanded ? '100%' : '195px')};
+  }
 `;
 
 export const Text = styled.p`
-  width: 312px;
+  width: 300px;
   height: ${({ $isExpanded }) => ($isExpanded ? 'auto' : '243px')};
 
   font-family: Montserrat;
@@ -78,6 +130,17 @@ export const Text = styled.p`
   font-style: italic;
   font-weight: 400;
   line-height: 1.38;
+
+  @media (min-width: 768px) {
+    width: 405px;
+    height: ${({ $isExpanded }) => ($isExpanded ? 'auto' : '132px')};
+    line-height: 1.2;
+  }
+
+  @media (min-width: 1440px) {
+    width: 341px;
+    height: ${({ $isExpanded }) => ($isExpanded ? 'auto' : '143px')};
+  }
 `;
 
 export const ReadMore = styled.button`
@@ -106,7 +169,37 @@ export const ArrowNext = styled.div`
   z-index: 10;
 
   right: 32.5%;
-  bottom: -66px;
+  bottom: 60px;
+
+  @media (min-width: 768px) {
+    right: 42.5%;
+    bottom: 80px;
+  }
+
+  @media (min-width: 1440px) {
+    right: 47%;
+    bottom: 121px;
+  }
+`;
+
+export const ArrowLeftSvg = styled(ArrowLeft)`
+  width: 48px;
+  height: 48px;
+
+  @media (min-width: 1440px) {
+    width: 24px;
+    height: 24px;
+  }
+`;
+
+export const ArrowRightSvg = styled(ArrowRight)`
+  width: 48px;
+  height: 48px;
+
+  @media (min-width: 1440px) {
+    width: 24px;
+    height: 24px;
+  }
 `;
 
 export const ArrowPrev = styled.div`
@@ -116,5 +209,15 @@ export const ArrowPrev = styled.div`
   z-index: 10;
 
   left: 32.5%;
-  bottom: -66px;
+  bottom: 60px;
+
+  @media (min-width: 768px) {
+    left: 42.5%;
+    bottom: 80px;
+  }
+
+  @media (min-width: 1440px) {
+    left: 47%;
+    bottom: 121px;
+  }
 `;
