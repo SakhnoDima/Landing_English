@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const Nav = styled(motion.div)`
   width: 100vw;
   height: 100vh;
-  opacity: 0.8;
   overflow: hidden;
   background-color: var(--background-color-white);
   position: absolute;
@@ -28,6 +27,7 @@ const Nav = styled(motion.div)`
   }
 
   @media screen and (min-width: 1440px) {
+    opacity: 0.8;
     .close-btn {
       width: 32px;
       height: 32px;
@@ -37,7 +37,11 @@ const Nav = styled(motion.div)`
 
 const NavMenu = ({ children, onBackdropClick }) => {
   return (
-    <Nav onClick={e=>onBackdropClick(e)} initial={{ x: '100%' }} animate={{ x: 0 }}>
+    <Nav
+      onClick={e => onBackdropClick(e)}
+      initial={{ x: '100%' }}
+      animate={{ x: 0 }}
+    >
       {children}
     </Nav>
   );
@@ -59,7 +63,6 @@ export const UlComponent = styled.ul`
   color: #000000;
   li {
     cursor: pointer;
-    font-family: 'Anek Bangla';
     font-size: 20px;
     font-weight: 500;
     line-height: 37px;

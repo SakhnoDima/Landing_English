@@ -15,7 +15,7 @@ const Hero = () => {
     <HeroSection>
       <p className="hero__title">Hello there!</p>
       <h1 className="hero__title">I'm Victoria, your Language Coach </h1>
-      <DescWrapper>
+      <DescWrapper $isOpen={isReadMore}>
         <p className="hero__desc">
           Helping clients on their path to learn languages
           {isReadMore ? '.' : '...'}
@@ -37,9 +37,7 @@ const Hero = () => {
           <ReadMoreBtn onClick={() => setReadMore(true)}>read more</ReadMoreBtn>
         )}
       </DescWrapper>
-      <HeroSvg
-        style={{ position: 'relative', left: '-34px', marginTop: '45px' }}
-      />
+      <HeroSvg className='hero__svg' />
       <Button $type="origin" $size="hero">
         Book a trial lesson
       </Button>
