@@ -39,12 +39,13 @@ export const WrapperMain = styled.div`
   background: var(--background-color-white);
   height: ${({ $isExpanded }) => ($isExpanded ? '500px' : '403px')};
   opacity: 0;
+  margin-bottom: 124px;
 
   &.activeSlide {
     transform: scale(1);
     opacity: 1;
     filter: blur(0px);
-    margin-bottom: 124px;
+
     opacity: 1;
   }
 

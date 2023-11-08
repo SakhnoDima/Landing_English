@@ -4,9 +4,9 @@ import {
   DescWrapper,
   ReadMoreBtn,
 } from './Hero.styled';
-import { ReactComponent as HeroSvg } from '../../images/svg/hero-svg.svg';
 import { useState } from 'react';
 import Button from '../Button/Button';
+import { LogoAnimate } from './LogoAnimate';
 
 const Hero = () => {
   const [isReadMore, setReadMore] = useState(false);
@@ -37,7 +37,7 @@ const Hero = () => {
           <ReadMoreBtn onClick={() => setReadMore(true)}>read more</ReadMoreBtn>
         )}
       </DescWrapper>
-      <HeroSvg className='hero__svg' />
+      <LogoAnimate />
       <Button $type="origin" $size="hero">
         Book a trial lesson
       </Button>

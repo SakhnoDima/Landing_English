@@ -17,6 +17,7 @@ import {
   YouGet,
 } from './PriceCardsList.styled';
 import Chat from 'components/Chat/Chat';
+import Container from 'components/Container/Container';
 
 const PriceCardsList = () => {
   const [isActiveid, setIsActiveId] = useState(null);
@@ -87,7 +88,7 @@ const PriceCardsList = () => {
   return (
     <StyledWrap style={background}>
       <Chat />
-      <div>
+      <Container>
         <Flipper
           flipKey={`${showDetails.specificGoal}${showDetails.lazyStart}${showDetails.tiredLessons}${showDetails.maternityLeave}`}
         >
@@ -271,7 +272,7 @@ const PriceCardsList = () => {
             </Flipped>
           </StyledList>
         </Flipper>
-      </div>
+      </Container>
     </StyledWrap>
   );
 };
