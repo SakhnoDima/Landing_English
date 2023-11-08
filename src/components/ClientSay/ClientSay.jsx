@@ -1,14 +1,13 @@
 import PriceCardsList from 'components/PriceCardsList/PriceCardsList';
-import Comments from '../Comments/Comments';
-import Container from 'components/Container/Container';
+import Comments from 'components/Comments/Comments';
+import Company from 'components/Company/Company';
 
 const ClientSay = () => {
   return (
     <section>
-      <Container>
-        <Comments />
-        <PriceCardsList />
-      </Container>
+      <Comments />
+      <Company />
+      <PriceCardsList />
     </section>
   );
 };
