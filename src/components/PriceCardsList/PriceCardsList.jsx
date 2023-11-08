@@ -53,6 +53,8 @@ const PriceCardsList = () => {
 
   const background = {
     background: `url(${backgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
   };
 
   const toggleDetails = (card, cardElement) => {

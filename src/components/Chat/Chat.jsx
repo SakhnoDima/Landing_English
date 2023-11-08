@@ -9,8 +9,10 @@ import styled from 'styled-components';
 
 const StyledWrapper = styled.div`
   margin-bottom: 60px;
+  padding: 0 16px;
   @media screen and (min-width: 768px) {
     margin-bottom: 55px;
+    padding: 0 40px;
   }
   @media screen and (min-width: 1440px) {
     margin-bottom: 40px;

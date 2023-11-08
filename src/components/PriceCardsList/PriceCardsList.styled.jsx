@@ -16,6 +16,7 @@ export const StyledWrap = styled.div`
 `;
 export const StyledList = styled.ul`
   display: flex;
+
   flex-direction: column;
   gap: 24px;
   width: 343px;
