@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+import heroBg from '../../images/hero_bg.png';
+
 const Hero = styled(motion.section)`
   position: relative;
   padding: 38px 16px 60px;
+  background: no-repeat url(${heroBg});
+  background-size: cover;
   .hero__title {
     font-size: 32px;
     font-weight: 600;
@@ -20,10 +24,6 @@ const Hero = styled(motion.section)`
     text-align: left;
   }
 
-  .hero__svg {
-    margin: 45px auto 66px -9px;
-  }
-
   @media screen and (min-width: 768px) {
     padding: 53px 0 80px 40px;
     .hero__title {
@@ -32,13 +32,6 @@ const Hero = styled(motion.section)`
     .hero__desc {
       margin-top: 8px;
       font-size: 16px;
-    }
-
-    .hero__svg {
-      position: absolute;
-      right: 0;
-      bottom: 80px;
-      margin: 0;
     }
   }
 
@@ -53,13 +46,6 @@ const Hero = styled(motion.section)`
       margin-top: 16px;
       font-size: 18px;
       line-height: 34px;
-    }
-
-    .hero__svg {
-      right: 40px;
-      bottom: 120px;
-      height: 430px;
-      width: 568px;
     }
   }
 `;
@@ -100,7 +86,10 @@ export const ReadMoreBtn = styled.button`
 
 export const HeroSection = ({ children }) => {
   return (
-    <Hero initial={{ y: 200, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
+    <Hero
+      initial={{ y: 200, opacity: 0 }}
+      animate={{ y: 0, opacity: 1, transition: { duration: 0.7 } }}
+    >
       {children}
     </Hero>
   );
