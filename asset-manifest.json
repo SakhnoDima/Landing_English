@@ -1,9 +1,11 @@
 {
   "files": {
     "main.css": "/Landing_English/static/css/main.3d2dd0e1.css",
-    "main.js": "/Landing_English/static/js/main.8b5446eb.js",
+    "main.js": "/Landing_English/static/js/main.e678af4e.js",
     "static/media/hero-svg.svg": "/Landing_English/static/media/hero-svg.02517f902c30a1b702deb57c6be20ae6.svg",
     "static/media/logo.svg": "/Landing_English/static/media/logo.8075e3be9208d51f07ee30c468ddcd83.svg",
+    "static/media/eteria.png": "/Landing_English/static/media/eteria.68ed9db68439b2d072cb.png",
+    "static/media/rengier.png": "/Landing_English/static/media/rengier.16157a33e51cfc59469d.png",
     "static/media/default-male.svg": "/Landing_English/static/media/default-male.e7eb9621b54c9704e8c7f377000ab039.svg",
     "static/media/default-female.svg": "/Landing_English/static/media/default-female.83c55162a51163146bfffb990df213d0.svg",
     "static/media/default-m.svg": "/Landing_English/static/media/default-m.1ed3faf84661eeac757ab75d31b18dd9.svg",
@@ -18,10 +20,10 @@
     "static/media/arrow-left.svg": "/Landing_English/static/media/arrow-left.1ce4798c591d4e9e7ded3152ab7c7330.svg",
     "static/media/arrow-right.svg": "/Landing_English/static/media/arrow-right.2fe87d4f8430254b98ad073c666399f1.svg",
     "main.3d2dd0e1.css.map": "/Landing_English/static/css/main.3d2dd0e1.css.map",
-    "main.8b5446eb.js.map": "/Landing_English/static/js/main.8b5446eb.js.map"
+    "main.e678af4e.js.map": "/Landing_English/static/js/main.e678af4e.js.map"
   },
   "entrypoints": [
     "static/css/main.3d2dd0e1.css",
-    "static/js/main.8b5446eb.js"
+    "static/js/main.e678af4e.js"
   ]
 }
