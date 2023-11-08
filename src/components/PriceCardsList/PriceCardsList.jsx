@@ -12,6 +12,7 @@ import {
   TwoParagraphMom,
   YouGet,
 } from './PriceCardsList.styled';
+import Container from 'components/Container/Container';
 
 const PriceCardsList = () => {
   const [isActiveid, setIsActiveId] = useState(null);
@@ -66,7 +67,7 @@ const PriceCardsList = () => {
   };
 
   return (
-    <div>
+    <Container>
       <Flipper
         flipKey={`${showDetails.specificGoal}${showDetails.lazyStart}${showDetails.tiredLessons}${showDetails.maternityLeave}`}
       >
@@ -248,7 +249,7 @@ const PriceCardsList = () => {
           </Flipped>
         </StyledList>
       </Flipper>
-    </div>
+    </Container>
   );
 };
 

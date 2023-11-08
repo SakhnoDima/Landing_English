@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Slider from 'react-slick';
 
 import LinesEllipsis from 'react-lines-ellipsis';
@@ -20,6 +20,7 @@ import {
   ArrowLeftSvg,
   ArrowRightSvg,
 } from './Comments.styled';
+import Container from 'components/Container/Container';
 
 const Comments = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -27,9 +28,14 @@ const Comments = () => {
   const [commentIndex, setCommentIndex] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
 
+  const sliderRef = useRef();
+
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
+      if (sliderRef.current) {
+        sliderRef.current.slickGoTo(commentIndex);
+      }
     };
 
     window.addEventListener('resize', handleResize);
@@ -41,6 +47,9 @@ const Comments = () => {
   const maxLines = windowWidth < 768 ? '11' : '7';
   const width =
     windowWidth < 768 ? '328px' : windowWidth < 1440 ? '451px' : '387px';
+
+  const isTablet = window.innerWidth >= 768;
+  const isDesktop = window.innerWidth >= 1440;
 
   const NextArrow = ({ onClick }) => {
     return (
@@ -59,6 +68,7 @@ const Comments = () => {
   };
 
   const settings = {
+    initialSlide: commentIndex,
     infinity: true,
     lazyLoading: true,
     speed: 300,
@@ -71,8 +81,8 @@ const Comments = () => {
     swipeToSlide: true,
     slidesToShow: 1,
     adaptiveHeight: true,
-    // autoplay: true,
-    // autoplaySpeed: 5000,
+    autoplay: true,
+    autoplaySpeed: 5000,
     beforeChange: (current, next) => {
       setCommentIndex(next);
       setActiveSlide(next);
@@ -84,22 +94,19 @@ const Comments = () => {
   };
 
   return (
-    <>
+    <Container>
       <Title>What my clients say</Title>
 
-      <Slider {...settings}>
+      <Slider {...settings} ref={sliderRef} key={windowWidth}>
         {commentsBlocks.map(({ img, name, profession, text }, idx) => {
           const isActive = idx === activeSlide;
-          const opacity = idx === 0;
           const expanded = isExpanded[idx];
           const lines = text.split(' ').length;
-          console.log(lines);
 
           return (
             <WrapperMain
               style={{
                 width,
-                opacity: opacity ? 0 : 1,
                 height: expanded ? 'auto' : '',
               }}
               key={idx}
@@ -125,20 +132,22 @@ const Comments = () => {
                     basedOn="letters"
                   />
                 )}
-                {lines > 40 && (
+                {(lines > 40 && isTablet) ||
+                (lines > 34 && isDesktop) ||
+                lines > 41 ? (
                   <ReadMore
                     $isExpanded={expanded}
                     onClick={() => toggleExpand(idx)}
                   >
                     read more
                   </ReadMore>
-                )}
+                ) : null}
               </TextArea>
             </WrapperMain>
           );
         })}
       </Slider>
-    </>
+    </Container>
   );
 };
 
