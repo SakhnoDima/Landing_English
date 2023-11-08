@@ -40,7 +40,7 @@ const HeaderStyles = styled(motion.header)`
 const HeaderComponent = ({ children }) => (
   <HeaderStyles
     initial={{ y: -100, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
+    animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
   >
     {children}
   </HeaderStyles>

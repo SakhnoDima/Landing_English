@@ -16,11 +16,7 @@ const Header = () => {
   return (
     <>
       <AnimatePresence>
-        {isOpen && (
-          <Nav
-            toggleMenu={toggleNav}
-          />
-        )}
+        {isOpen && <Nav toggleMenu={toggleNav} />}
       </AnimatePresence>
 
       <HeaderComponent>
