@@ -33,6 +33,7 @@ const Comments = () => {
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
+
       if (sliderRef.current) {
         sliderRef.current.slickGoTo(commentIndex);
       }
