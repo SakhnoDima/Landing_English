@@ -1,8 +1,11 @@
 {
   "files": {
     "main.css": "/Landing_English/static/css/main.3d2dd0e1.css",
-    "main.js": "/Landing_English/static/js/main.d30f5995.js",
+    "main.js": "/Landing_English/static/js/main.b181b9b9.js",
     "static/media/hero_bg.png": "/Landing_English/static/media/hero_bg.c687c161e2044a418dd4.png",
+    "static/media/backDesk.png": "/Landing_English/static/media/backDesk.f6a950ea0d6a60d01ba6.png",
+    "static/media/backTab.png": "/Landing_English/static/media/backTab.b2fd7e260ba38b48c7da.png",
+    "static/media/backMob.png": "/Landing_English/static/media/backMob.b82fcd14fbc55b8af2f4.png",
     "static/media/logo.svg": "/Landing_English/static/media/logo.8075e3be9208d51f07ee30c468ddcd83.svg",
     "static/media/bg.svg": "/Landing_English/static/media/bg.2833d1c4be12eddc501005b8527c562d.svg",
     "static/media/eteria.png": "/Landing_English/static/media/eteria.68ed9db68439b2d072cb.png",
@@ -29,10 +32,10 @@
     "static/media/arrow-left.svg": "/Landing_English/static/media/arrow-left.1ce4798c591d4e9e7ded3152ab7c7330.svg",
     "static/media/arrow-right.svg": "/Landing_English/static/media/arrow-right.2fe87d4f8430254b98ad073c666399f1.svg",
     "main.3d2dd0e1.css.map": "/Landing_English/static/css/main.3d2dd0e1.css.map",
-    "main.d30f5995.js.map": "/Landing_English/static/js/main.d30f5995.js.map"
+    "main.b181b9b9.js.map": "/Landing_English/static/js/main.b181b9b9.js.map"
   },
   "entrypoints": [
     "static/css/main.3d2dd0e1.css",
-    "static/js/main.d30f5995.js"
+    "static/js/main.b181b9b9.js"
   ]
 }
