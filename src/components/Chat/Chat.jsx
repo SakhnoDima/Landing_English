@@ -16,6 +16,7 @@ const StyledWrapper = styled.div`
   }
   @media screen and (min-width: 1440px) {
     margin-bottom: 40px;
+    padding: 0 120px;
   }
 `;
 const StyledDivTop = styled.div`

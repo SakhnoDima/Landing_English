@@ -148,6 +148,9 @@ export const StyledCard = styled.li`
 
     &:last-child {
       padding-top: 45px;
+      h2 {
+        margin-bottom: 0;
+      }
     }
 
     &.active {
