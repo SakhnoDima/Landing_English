@@ -140,7 +140,11 @@ export const CountWrapperList = styled.div`
 `;
 
 export const Arrow = styled(ArrowFlexble)`
-  display: flex;
-  align-items: center;
-  margin-left: 12px;
+  display: none;
+
+  @media (min-width: 1440px) {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+  }
 `;

@@ -9,16 +9,16 @@ import konrad from 'images/svg/default-m.svg';
 
 const commentsBlocks = [
   {
-    img: piotr,
-    name: 'Piotr',
-    profession: 'IT Specialist',
-    text: `"I had the pleasure of being part of Victoria's class - it was a very effective time for me in terms of developing my language skills. Victoria always used interesting techniques that fully engaged the group, she made sure that everyone spoke (it was hard to keep silent ;) ). Each lesson had different cases that changed regularly, allowing you to explore different aspects of language use. I recommend a lesson with Victoria, you will definitely make progress!"`,
-  },
-  {
     img: konradSenior,
     name: 'Konrad',
     profession: 'Senior Key Account Manager',
     text: `"Dzięki lekcjom, mówienie w języku angielskim przestało być dla mnie stresujące co bardzo pomogło mi zarówno w rozmowach biznesowych jak i prywatnych z obcokrajowcami. Zdecydowanie polecam zarówno zajęcia grupowe jak i lekcje indywidualne."`,
+  },
+  {
+    img: piotr,
+    name: 'Piotr',
+    profession: 'IT Specialist',
+    text: `"I had the pleasure of being part of Victoria's class - it was a very effective time for me in terms of developing my language skills. Victoria always used interesting techniques that fully engaged the group, she made sure that everyone spoke (it was hard to keep silent ;) ). Each lesson had different cases that changed regularly, allowing you to explore different aspects of language use. I recommend a lesson with Victoria, you will definitely make progress!"`,
   },
   {
     img: paweł,

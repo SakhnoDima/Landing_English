@@ -38,18 +38,15 @@ export const CompanyWrapper = styled.div`
   justify-content: center;
   background-color: var(--background-white);
   padding: 32px 0px;
-  margin-bottom: 60px;
 
   @media (min-width: 768px) {
     padding: 40px 0px;
     flex-direction: row;
     gap: 32px;
-    margin-bottom: 80px;
   }
 
   @media (min-width: 1440px) {
     padding: 54.5px 0px;
     gap: 40px;
-    margin-bottom: 120px;
   }
 `;
