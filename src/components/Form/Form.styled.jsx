@@ -75,10 +75,18 @@ export const InputWrap = styled.div`
     height: 118px;
   }
 
-  /* span {
+  span {
     position: absolute;
     top: 140px;
     right: 105px;
     color: #ff2b55;
-  } */
+
+    @media screen and (min-width: 768px) {
+      right: 164px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      top: 152px;
+    }
+  }
 `;

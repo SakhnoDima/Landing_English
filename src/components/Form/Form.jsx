@@ -15,6 +15,7 @@ const Form = () => {
     message: '',
   });
   const [emailError, setEmailError] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -23,7 +24,10 @@ const Form = () => {
       ...prevInfo,
       [name]: value,
     }));
-    console.log(clientInfo);
+  };
+
+  const removeSpan = () => {
+    setIsActive(true);
   };
 
   const handleSubmit = e => {
@@ -38,7 +42,6 @@ const Form = () => {
     const emailRegexp = /^\w+([/.-]?\w+)*@\w+([/.-]?\w+)*(\.\w{2,3})+$/;
 
     if (!emailRegexp.test(clientInfo.clientEmail)) {
-      console.log('clgerr');
       setEmailError(true);
       return;
     }
@@ -51,8 +54,6 @@ const Form = () => {
       .catch(error => {
         console.error('Error submitting form:', error);
       });
-
-    console.log(client);
   };
   return (
     <FormWrapper>
@@ -79,6 +80,7 @@ const Form = () => {
             name="clientEmail"
             placeholder="Enter Your email address"
             onChange={handleChange}
+            onClick={removeSpan}
             style={{
               background: emailError
                 ? 'rgba(255, 212, 212, 0.40)'
@@ -89,7 +91,7 @@ const Form = () => {
             autoComplete="off"
             required
           />
-          {/* <span>*</span> */}
+          {!isActive && <span>*</span>}
           <textarea
             name="message"
             placeholder="Enter Your message"
