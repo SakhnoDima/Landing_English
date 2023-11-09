@@ -35,7 +35,7 @@ const Form = () => {
       message: clientInfo.message,
     };
 
-    const emailRegexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const emailRegexp = /^\w+([/.-]?\w+)*@\w+([/.-]?\w+)*(\.\w{2,3})+$/;
 
     if (!emailRegexp.test(clientInfo.clientEmail)) {
       console.log('clgerr');
