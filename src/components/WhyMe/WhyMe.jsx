@@ -1,12 +1,16 @@
 import LetsTry from 'components/LetsTry/LetsTry';
 import Motivation from 'components/Motivation/Motivation';
+import { Wrapper } from './WhyMe.styled';
+import Container from 'components/Container/Container';
 
 const WhyMe = () => {
   return (
-    <section>
-      <Motivation />
-      <LetsTry />
-    </section>
+    <Wrapper>
+      <Container>
+        <Motivation />
+        <LetsTry />
+      </Container>
+    </Wrapper>
   );
 };
 

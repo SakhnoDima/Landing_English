@@ -38,7 +38,7 @@ const Comments = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [windowWidth, commentIndex]);
+  }, [windowWidth]);
 
   const maxLines = windowWidth < 768 ? '11' : '7';
   const width =
@@ -99,8 +99,6 @@ const Comments = () => {
             const isActive = idx === activeSlide;
             const expanded = isExpanded[idx];
             const lines = text.split(' ').length;
-
-            console.log(maxLines);
 
             return (
               <WrapperMain

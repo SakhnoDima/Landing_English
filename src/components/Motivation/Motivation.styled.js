@@ -1,28 +1,9 @@
 import styled from 'styled-components';
 
-import mob from 'images/whyMe_mobile.png';
-import tablet from 'images/whyMe_tablet.png';
-import desktop from 'images/whyMe_desktop.png';
-
 import { ReactComponent as Stress } from 'images/svg/stress.svg';
 import { ReactComponent as Motivation } from 'images/svg/motivation.svg';
 import { ReactComponent as Intersactive } from 'images/svg/intersactive.svg';
 import { ReactComponent as Cooperation } from 'images/svg/cooperation.svg';
-
-export const Wrapper = styled.div`
-  background: no-repeat url(${mob});
-  background-color: var(--background-color-white);
-  background-size: cover;
-  padding: 60px 0;
-
-  @media (min-width: 768px) {
-    background-image: url(${tablet});
-  }
-
-  @media (min-width: 1440px) {
-    background-image: url(${desktop});
-  }
-`;
 
 export const Title = styled.h2`
   font-size: 28px;
@@ -41,13 +22,17 @@ export const WrapperContainerAll = styled.div`
   gap: 51px;
   flex-direction: column;
 
+  margin-bottom: 60px;
+
   @media (min-width: 768px) {
     gap: 60px 20px;
     flex-wrap: wrap;
     flex-direction: unset;
+    margin-bottom: 79px;
   }
 
   @media (min-width: 1440px) {
+    margin-bottom: 142px;
     gap: 20px;
     flex-wrap: nowrap;
   }
