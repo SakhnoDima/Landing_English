@@ -6,12 +6,24 @@ const obj = {
   4: 'd',
 };
 
+export const StyledWrap = styled.div`
+  padding: 60px 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 80px 0 0 0;
+    margin-bottom: 35px;
+  }
+`;
 export const StyledList = styled.ul`
   display: flex;
+
   flex-direction: column;
   gap: 24px;
   width: 343px;
   margin: 0 auto;
+  li {
+    transition: transform 0.3s;
+  }
 
   @media screen and (min-width: 768px) {
     display: grid;
@@ -20,6 +32,10 @@ export const StyledList = styled.ul`
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     width: 688px;
+
+    li {
+      transition: none;
+    }
 
     .div1 {
       grid-area: ${({ $id }) => ($id === 1 ? 'a' : $id ? obj[$id] : 'a')};
@@ -40,6 +56,11 @@ export const StyledList = styled.ul`
     flex-direction: row;
     justify-content: space-between;
     width: 1200px;
+    height: 433px;
+
+    li {
+      transition: transform 0.3s;
+    }
   }
 `;
 
@@ -105,7 +126,6 @@ export const StyledCard = styled.li`
     }
   }
   @media screen and (min-width: 1440px) {
-    cursor: pointer;
     h2 {
       font-size: 20px;
     }
@@ -126,6 +146,10 @@ export const StyledCard = styled.li`
       }
     }
 
+    &:last-child {
+      padding-top: 45px;
+    }
+
     &.active {
       &:nth-child(odd) {
         background-color: var(--background-card-white);
@@ -133,6 +157,10 @@ export const StyledCard = styled.li`
 
       &:nth-child(even) {
         background-color: var(--background-card-white-blue);
+      }
+
+      &:last-child {
+        padding-top: 16px;
       }
     }
   }

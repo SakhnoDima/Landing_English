@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+import heroBg from '../../images/hero_bg.png';
+
 const Hero = styled(motion.section)`
   position: relative;
-  padding: 38px 16px 60px;
+  padding: 38px 0 60px;
+  background: no-repeat url(${heroBg});
+  background-size: cover;
   .hero__title {
     font-size: 32px;
     font-weight: 600;
@@ -20,12 +24,9 @@ const Hero = styled(motion.section)`
     text-align: left;
   }
 
-  .hero__svg {
-    margin: 45px auto 66px -9px;
-  }
-
   @media screen and (min-width: 768px) {
-    padding: 53px 0 80px 40px;
+    padding: 53px 0 80px;
+    margin-right: -40px;
     .hero__title {
       line-height: 45px;
     }
@@ -33,17 +34,11 @@ const Hero = styled(motion.section)`
       margin-top: 8px;
       font-size: 16px;
     }
-
-    .hero__svg {
-      position: absolute;
-      right: 0;
-      bottom: 80px;
-      margin: 0;
-    }
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 120px 40px 120px 120px;
+    padding: 120px 0px;
+    margin-right: 0px;
     .hero__title {
       font-size: 40px;
       font-weight: 500;
@@ -53,13 +48,6 @@ const Hero = styled(motion.section)`
       margin-top: 16px;
       font-size: 18px;
       line-height: 34px;
-    }
-
-    .hero__svg {
-      right: 40px;
-      bottom: 120px;
-      height: 430px;
-      width: 568px;
     }
   }
 `;
@@ -73,11 +61,16 @@ export const HeroDescription = styled.p`
   span {
     font-weight: 500;
   }
+
+  @media screen and (min-width: 768px) and (max-width: 1339.9px) {
+    max-width: 429px;
+  }
 `;
 export const DescWrapper = styled.div`
+  position: relative;
   @media screen and (min-width: 768px) {
     max-width: ${({ $isOpen }) => ($isOpen ? '450px' : 'auto')};
-    margin-bottom: ${({ $isOpen }) => ($isOpen ? '30px' : '146px')};
+    margin-bottom: ${({ $isOpen }) => ($isOpen ? '52px' : '165px')};
   }
 `;
 export const ReadMoreBtn = styled.button`
@@ -98,9 +91,33 @@ export const ReadMoreBtn = styled.button`
   }
 `;
 
+export const CloseTextBtn = styled.button`
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 37px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #466eb6;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
 export const HeroSection = ({ children }) => {
   return (
-    <Hero initial={{ y: 200, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
+    <Hero
+      initial={{ y: 200, opacity: 0 }}
+      animate={{ y: 0, opacity: 1, transition: { duration: 0.7 } }}
+    >
       {children}
     </Hero>
   );
