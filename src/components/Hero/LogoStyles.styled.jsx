@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-const SvgAnim = styled.div`
+const SvgAnimStyles = styled(motion.div)`
   position: relative;
   width: 360px;
   height: 273px;
@@ -201,5 +202,17 @@ const SvgAnim = styled.div`
     }
   }
 `;
+
+const SvgAnim = ({ children }) => {
+  return (
+    <SvgAnimStyles
+      initial={{ y: 30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{duration: 1, delay: 0.5}}
+    >
+      {children}
+    </SvgAnimStyles>
+  );
+};
 
 export default SvgAnim;

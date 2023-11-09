@@ -20,7 +20,9 @@ const Header = () => {
       </AnimatePresence>
 
       <HeaderComponent>
+        <a href='#hero'>
         <Logo className="logo" />
+        </a>
         <BurgerMenu onClick={toggleNav} className="menu" />
       </HeaderComponent>
     </>

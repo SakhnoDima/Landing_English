@@ -2,13 +2,16 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const HeaderStyles = styled(motion.header)`
-  position: sticky;
+  position: fixed;
+  width: 100%;
+  top: 0;
   z-index: 998;
   display: flex;
   justify-content: flex-end;
   padding-inline-end: 16px;
   padding-block-start: 48px;
   gap: 30px;
+  background: var(--background-color-white);
   .logo {
     width: 200px;
     height: 60px;

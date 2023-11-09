@@ -4,6 +4,10 @@
 
 @import url('./css/root.css');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Anek Bangla', sans-serif;
