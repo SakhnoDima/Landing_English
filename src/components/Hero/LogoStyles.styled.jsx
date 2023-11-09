@@ -125,7 +125,6 @@ const SvgAnim = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    right: 40px;
     bottom: 120px;
     width: 568px;
     height: 430px;
