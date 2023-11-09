@@ -2,11 +2,13 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 const Nav = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  right: 0;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   background-color: var(--background-color-white);
-  position: absolute;
   z-index: 999;
   .close-btn {
     position: absolute;
@@ -19,7 +21,6 @@ const Nav = styled(motion.div)`
 
   @media screen and (min-width: 768px) {
     width: calc(100vw - 52%);
-    right: 0;
     .close-btn {
       top: 24px;
       right: 40px;

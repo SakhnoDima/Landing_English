@@ -6,6 +6,8 @@ import heroBg from '../../images/hero_bg.png';
 const Hero = styled(motion.section)`
   position: relative;
   padding: 38px 0 60px;
+  margin-top: 112px;
+  scroll-margin-top: 112px;
   background: no-repeat url(${heroBg});
   background-size: cover;
   .hero__title {
@@ -27,6 +29,7 @@ const Hero = styled(motion.section)`
   @media screen and (min-width: 768px) {
     padding: 53px 0 80px;
     margin-right: -40px;
+    margin-top: 93px;
     .hero__title {
       line-height: 45px;
     }
@@ -39,6 +42,7 @@ const Hero = styled(motion.section)`
   @media screen and (min-width: 1440px) {
     padding: 120px 0px;
     margin-right: 0px;
+    margin-top: 125px;
     .hero__title {
       font-size: 40px;
       font-weight: 500;
@@ -66,13 +70,19 @@ export const HeroDescription = styled.p`
     max-width: 429px;
   }
 `;
-export const DescWrapper = styled.div`
+
+const DescWrapperStyles = styled(motion.div)`
   position: relative;
   @media screen and (min-width: 768px) {
     max-width: ${({ $isOpen }) => ($isOpen ? '450px' : 'auto')};
     margin-bottom: ${({ $isOpen }) => ($isOpen ? '52px' : '165px')};
   }
 `;
+
+export const DescWrapper = ({ children, $isOpen }) => {
+  return <DescWrapperStyles $isOpen={$isOpen}>{children}</DescWrapperStyles>;
+};
+
 export const ReadMoreBtn = styled.button`
   background: transparent;
   border: none;
@@ -115,6 +125,7 @@ export const CloseTextBtn = styled.button`
 export const HeroSection = ({ children }) => {
   return (
     <Hero
+      id="hero"
       initial={{ y: 200, opacity: 0 }}
       animate={{ y: 0, opacity: 1, transition: { duration: 0.7 } }}
     >
