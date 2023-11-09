@@ -6,6 +6,10 @@ import { ReactComponent as ArrowRight } from 'images/svg/arrow-right.svg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+export const WrapperBackground = styled.div`
+  background-color: var(--background-color-white);
+`;
+
 export const Title = styled.h2`
   font-size: 28px;
   margin-bottom: 24px;
@@ -186,6 +190,14 @@ export const ArrowNext = styled.div`
 export const ArrowLeftSvg = styled(ArrowLeft)`
   width: 48px;
   height: 48px;
+  stroke: var(--black);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  &:hover,
+  &:focus {
+    stroke-width: 3;
+  }
 
   @media (min-width: 1440px) {
     width: 24px;
@@ -196,6 +208,15 @@ export const ArrowLeftSvg = styled(ArrowLeft)`
 export const ArrowRightSvg = styled(ArrowRight)`
   width: 48px;
   height: 48px;
+  stroke-width: 2;
+  stroke: var(--black);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  &:hover,
+  &:focus {
+    stroke-width: 3;
+  }
 
   @media (min-width: 1440px) {
     width: 24px;
