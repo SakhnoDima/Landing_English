@@ -15,7 +15,7 @@ export const Text = styled.p`
   &:after {
     content: '';
     position: absolute;
-    left: 22px;
+    left: 22.5px;
     top: 99%;
     border-width: 10px;
     border-style: solid;
@@ -109,7 +109,7 @@ export const Button = styled.button`
   &:after {
     content: '';
     position: absolute;
-    right: 15px;
+    right: 18.5px;
     top: 99%;
     border-width: 10px;
     border-style: solid;
@@ -128,9 +128,9 @@ export const Button = styled.button`
   &:before {
     content: '';
     position: absolute;
-    right: 15px;
+    right: 18px;
     top: 100%;
-    border-width: 10px;
+    border-width: 11px;
     border-style: solid;
     border-color: var(--orange-primary) transparent transparent
       var(--orange-primary);
@@ -154,12 +154,12 @@ export const Button = styled.button`
     margin-bottom: 37px;
 
     &:after {
-      right: 15px;
-      top: 99%;
+      right: 16px;
+      top: 98.9%;
     }
 
     &:before {
-      right: 14px;
+      right: 15px;
       top: 100%;
       border-width: 11px;
     }
