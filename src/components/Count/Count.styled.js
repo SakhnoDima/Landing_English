@@ -123,7 +123,7 @@ export const CountItem = styled.li`
     line-height: normal;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1440px) {
     width: 220px;
     font-size: 16px;
   }
