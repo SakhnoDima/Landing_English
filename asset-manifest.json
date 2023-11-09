@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/Landing_English/static/css/main.3d2dd0e1.css",
-    "main.js": "/Landing_English/static/js/main.9a03eb2f.js",
+    "main.js": "/Landing_English/static/js/main.31ab5854.js",
     "static/media/hero_bg.png": "/Landing_English/static/media/hero_bg.c687c161e2044a418dd4.png",
     "static/media/backDesk.png": "/Landing_English/static/media/backDesk.f6a950ea0d6a60d01ba6.png",
     "static/media/backTab.png": "/Landing_English/static/media/backTab.b2fd7e260ba38b48c7da.png",
     "static/media/backMob.png": "/Landing_English/static/media/backMob.b82fcd14fbc55b8af2f4.png",
+    "static/media/Victoria.png": "/Landing_English/static/media/Victoria.e94256acb20fcf92ee4e.png",
     "static/media/logo.svg": "/Landing_English/static/media/logo.8075e3be9208d51f07ee30c468ddcd83.svg",
     "static/media/bg.svg": "/Landing_English/static/media/bg.2833d1c4be12eddc501005b8527c562d.svg",
     "static/media/eteria.png": "/Landing_English/static/media/eteria.68ed9db68439b2d072cb.png",
@@ -28,15 +29,17 @@
     "static/media/star.svg": "/Landing_English/static/media/star.2879b190d41a8a7d714e969c69368ea6.svg",
     "static/media/leftLine.svg": "/Landing_English/static/media/leftLine.f8431dab57143d25fdbef72b926c32f0.svg",
     "static/media/rightLine.svg": "/Landing_English/static/media/rightLine.8fb281b8a915948723cdd5c50e548c8d.svg",
+    "static/media/mail.svg": "/Landing_English/static/media/mail.2a7a3991a28db28a77609f3690ec1ae9.svg",
     "static/media/close-text-arrow.svg": "/Landing_English/static/media/close-text-arrow.17e3f44595638671f17667bbc1d0622f.svg",
+    "static/media/send.svg": "/Landing_English/static/media/send.4e7187360b9203f0110f0727cde92192.svg",
     "static/media/x.svg": "/Landing_English/static/media/x.dd287d17518452871104bc42db5a7f7e.svg",
     "static/media/arrow-left.svg": "/Landing_English/static/media/arrow-left.1ce4798c591d4e9e7ded3152ab7c7330.svg",
     "static/media/arrow-right.svg": "/Landing_English/static/media/arrow-right.2fe87d4f8430254b98ad073c666399f1.svg",
     "main.3d2dd0e1.css.map": "/Landing_English/static/css/main.3d2dd0e1.css.map",
-    "main.9a03eb2f.js.map": "/Landing_English/static/js/main.9a03eb2f.js.map"
+    "main.31ab5854.js.map": "/Landing_English/static/js/main.31ab5854.js.map"
   },
   "entrypoints": [
     "static/css/main.3d2dd0e1.css",
-    "static/js/main.9a03eb2f.js"
+    "static/js/main.31ab5854.js"
   ]
 }
