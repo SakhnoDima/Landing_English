@@ -5,7 +5,7 @@ import heroBg from '../../images/hero_bg.png';
 
 const Hero = styled(motion.section)`
   position: relative;
-  padding: 38px 16px 60px;
+  padding: 38px 0 60px;
   background: no-repeat url(${heroBg});
   background-size: cover;
   .hero__title {
@@ -25,7 +25,8 @@ const Hero = styled(motion.section)`
   }
 
   @media screen and (min-width: 768px) {
-    padding: 53px 0 80px 40px;
+    padding: 53px 0 80px;
+    margin-right: -40px;
     .hero__title {
       line-height: 45px;
     }
@@ -36,7 +37,8 @@ const Hero = styled(motion.section)`
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 120px 40px 120px 120px;
+    padding: 120px 0px;
+    margin-right: 0px;
     .hero__title {
       font-size: 40px;
       font-weight: 500;
@@ -59,11 +61,16 @@ export const HeroDescription = styled.p`
   span {
     font-weight: 500;
   }
+
+  @media screen and (min-width: 768px) and (max-width: 1339.9px) {
+    max-width: 429px;
+  }
 `;
 export const DescWrapper = styled.div`
+  position: relative;
   @media screen and (min-width: 768px) {
     max-width: ${({ $isOpen }) => ($isOpen ? '450px' : 'auto')};
-    margin-bottom: ${({ $isOpen }) => ($isOpen ? '30px' : '146px')};
+    margin-bottom: ${({ $isOpen }) => ($isOpen ? '52px' : '165px')};
   }
 `;
 export const ReadMoreBtn = styled.button`
@@ -81,6 +88,27 @@ export const ReadMoreBtn = styled.button`
 
   &:hover {
     color: var(--text-blue);
+  }
+`;
+
+export const CloseTextBtn = styled.button`
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 37px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #466eb6;
+
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 `;
 

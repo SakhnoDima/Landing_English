@@ -68,7 +68,7 @@ export const StyledButton = styled.button`
         return '239px';
       }
     }};
-    font-size: 24px;
+    font-size: 20px;
     height: 40px;
   }
 `;

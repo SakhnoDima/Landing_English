@@ -13,6 +13,6 @@ export const StyledContainer = styled.div`
   }
   @media screen and (min-width: ${breakpoints.desk}px) {
     max-width: ${breakpoints.desk}px;
-    padding: 0 120px;
+    padding: ${({ $hero }) => ($hero ? '0px 40px 0px 120px' : '0px 120px')};
   }
 `;
