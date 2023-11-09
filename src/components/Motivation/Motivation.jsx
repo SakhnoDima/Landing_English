@@ -1,4 +1,3 @@
-import Container from 'components/Container/Container';
 import {
   CooperationIcon,
   IntersactiveIcon,
@@ -7,7 +6,6 @@ import {
   TextWrapper,
   TextWrapperSecondary,
   Title,
-  Wrapper,
   WrapperContainer,
   WrapperContainerAll,
   WrapperText,
