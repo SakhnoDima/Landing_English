@@ -1,26 +1,33 @@
 {
   "files": {
-    "main.css": "/Landing_English/static/css/main.3d2dd0e1.css",
-    "main.js": "/Landing_English/static/js/main.31ab5854.js",
+    "main.css": "/Landing_English/static/css/main.23c46a65.css",
+    "main.js": "/Landing_English/static/js/main.553893f4.js",
     "static/media/hero_bg.png": "/Landing_English/static/media/hero_bg.c687c161e2044a418dd4.png",
     "static/media/backDesk.png": "/Landing_English/static/media/backDesk.f6a950ea0d6a60d01ba6.png",
     "static/media/backTab.png": "/Landing_English/static/media/backTab.b2fd7e260ba38b48c7da.png",
     "static/media/backMob.png": "/Landing_English/static/media/backMob.b82fcd14fbc55b8af2f4.png",
+    "static/media/whyMe_desktop.png": "/Landing_English/static/media/whyMe_desktop.e445eb34d489e7c0797c.png",
     "static/media/Victoria.png": "/Landing_English/static/media/Victoria.e94256acb20fcf92ee4e.png",
+    "static/media/whyMe_tablet.png": "/Landing_English/static/media/whyMe_tablet.51d99d4c6ff9c97c91dc.png",
+    "static/media/whyMe_mobile.png": "/Landing_English/static/media/whyMe_mobile.7aa0149ac6bc1c6a27f1.png",
     "static/media/logo.svg": "/Landing_English/static/media/logo.8075e3be9208d51f07ee30c468ddcd83.svg",
     "static/media/bg.svg": "/Landing_English/static/media/bg.2833d1c4be12eddc501005b8527c562d.svg",
     "static/media/eteria.png": "/Landing_English/static/media/eteria.68ed9db68439b2d072cb.png",
     "static/media/rengier.png": "/Landing_English/static/media/rengier.16157a33e51cfc59469d.png",
+    "static/media/stress.svg": "/Landing_English/static/media/stress.a8ebd372f76875df2b43fc8f7dadcb29.svg",
     "static/media/notepad.svg": "/Landing_English/static/media/notepad.fa8f8c8e1215fe1e8f3b8cc820c51b19.svg",
     "static/media/default-male.svg": "/Landing_English/static/media/default-male.e7eb9621b54c9704e8c7f377000ab039.svg",
     "static/media/default-female.svg": "/Landing_English/static/media/default-female.83c55162a51163146bfffb990df213d0.svg",
     "static/media/default-m.svg": "/Landing_English/static/media/default-m.1ed3faf84661eeac757ab75d31b18dd9.svg",
+    "static/media/intersactive.svg": "/Landing_English/static/media/intersactive.64d2b9d46cac67c29487eb8c2f34368c.svg",
     "static/media/certificate.svg": "/Landing_English/static/media/certificate.4973f5aa70f466c420d9c4c5a09e99a3.svg",
     "static/media/slick.svg": "/Landing_English/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/Landing_English/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/default-f.svg": "/Landing_English/static/media/default-f.dada9e0792a824d60470848cdb63c2bb.svg",
+    "static/media/cooperation.svg": "/Landing_English/static/media/cooperation.c137c32e62864cd39c4f54d82d66895e.svg",
     "static/media/slick.ttf": "/Landing_English/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Landing_English/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/motivation.svg": "/Landing_English/static/media/motivation.fa77e660705a7eb3551a8f8008ea831c.svg",
     "static/media/folder.svg": "/Landing_English/static/media/folder.59f1b69b24d16abc4aaf569977cd7274.svg",
     "static/media/arrow.svg": "/Landing_English/static/media/arrow.8c8fd0ba5f749cfce03bfcdaaa3790f4.svg",
     "index.html": "/Landing_English/index.html",
@@ -33,13 +40,13 @@
     "static/media/close-text-arrow.svg": "/Landing_English/static/media/close-text-arrow.17e3f44595638671f17667bbc1d0622f.svg",
     "static/media/send.svg": "/Landing_English/static/media/send.4e7187360b9203f0110f0727cde92192.svg",
     "static/media/x.svg": "/Landing_English/static/media/x.dd287d17518452871104bc42db5a7f7e.svg",
-    "static/media/arrow-left.svg": "/Landing_English/static/media/arrow-left.1ce4798c591d4e9e7ded3152ab7c7330.svg",
-    "static/media/arrow-right.svg": "/Landing_English/static/media/arrow-right.2fe87d4f8430254b98ad073c666399f1.svg",
-    "main.3d2dd0e1.css.map": "/Landing_English/static/css/main.3d2dd0e1.css.map",
-    "main.31ab5854.js.map": "/Landing_English/static/js/main.31ab5854.js.map"
+    "static/media/arrow-left.svg": "/Landing_English/static/media/arrow-left.d9ea8f698f40741eddfc6de4b84786a1.svg",
+    "static/media/arrow-right.svg": "/Landing_English/static/media/arrow-right.4363a2108874a2ab834e9d98df721be1.svg",
+    "main.23c46a65.css.map": "/Landing_English/static/css/main.23c46a65.css.map",
+    "main.553893f4.js.map": "/Landing_English/static/js/main.553893f4.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d2dd0e1.css",
-    "static/js/main.31ab5854.js"
+    "static/css/main.23c46a65.css",
+    "static/js/main.553893f4.js"
   ]
 }
