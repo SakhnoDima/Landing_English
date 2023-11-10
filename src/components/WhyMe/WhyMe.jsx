@@ -5,7 +5,7 @@ import Container from 'components/Container/Container';
 
 const WhyMe = () => {
   return (
-    <Wrapper>
+    <Wrapper id='whyMe'>
       <Container>
         <Motivation />
         <LetsTry />

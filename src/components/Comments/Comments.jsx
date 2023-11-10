@@ -90,7 +90,7 @@ const Comments = () => {
   };
 
   return (
-    <WrapperBackground>
+    <WrapperBackground id="whatMyClientsSay">
       <Container>
         <Title>What my clients say...</Title>
 

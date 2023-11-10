@@ -30,7 +30,7 @@ export const CompanyEteria = styled.img`
   }
 `;
 
-export const CompanyWrapper = styled.div`
+export const CompanyWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -38,6 +38,7 @@ export const CompanyWrapper = styled.div`
   justify-content: center;
   background-color: var(--background-white);
   padding: 32px 0px;
+  scroll-margin-block-start: 180px;
 
   @media (min-width: 768px) {
     padding: 40px 0px;

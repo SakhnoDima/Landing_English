@@ -3,6 +3,7 @@ import { breakpoints } from 'constants/constants';
 
 export const StyledFooter = styled.footer`
   background-color: var(--background-white);
+  scroll-margin-block-end: 0px;
 `;
 
 export const Wrapper = styled.div`

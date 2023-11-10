@@ -6,8 +6,9 @@ const obj = {
   4: 'd',
 };
 
-export const StyledWrap = styled.div`
+export const StyledWrap = styled.section`
   padding: 60px 0;
+  scroll-margin-block-start: 80px;
 
   @media screen and (min-width: 768px) {
     padding: 80px 0 35px 0;

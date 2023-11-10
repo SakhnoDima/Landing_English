@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { ReactComponent as ArrowFlexble } from 'images/svg/arrow.svg';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   background-color: var(--background-white);
   padding: 32px 0px;
+  scroll-margin-block-start: 100px;
 
   @media (min-width: 768px) {
     padding: 40px 0px;

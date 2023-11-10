@@ -11,7 +11,7 @@ import allegro from 'images/allegro.png';
 
 const Company = () => {
   return (
-    <CompanyWrapper>
+    <CompanyWrapper id="clients">
       <CompanyRengier src={rengier} alt="rengier axel springer" />
 
       <CompanyAllegro src={allegro} alt="allegro" />

@@ -6,8 +6,9 @@ import { ReactComponent as ArrowRight } from 'images/svg/arrow-right.svg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-export const WrapperBackground = styled.div`
+export const WrapperBackground = styled.section`
   background-color: var(--background-color-white);
+  scroll-margin-block-start: 150px;
 `;
 
 export const Title = styled.h2`
