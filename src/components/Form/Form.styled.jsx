@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const FormWrapper = styled.div`
-  width: 295px;
   margin: 0 auto;
 `;
 

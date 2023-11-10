@@ -60,6 +60,12 @@ export const UlComponent = styled.ul`
       color: inherit;
     }
   }
+  li:is(:hover, :focus-within) {
+    color: var(--orange-primary);
+  }
+  li:active {
+    color: var(--orange-secondary);
+  }
 `;
 
 const NavMenu = ({ children, onBackdropClick }) => {
