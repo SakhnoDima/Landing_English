@@ -18,7 +18,7 @@ import {
 } from './PriceCardsList.styled';
 import Chat from 'components/Chat/Chat';
 import Container from 'components/Container/Container';
-import Form from 'components/Form/Form';
+import Forma from 'components/Form/Form';
 
 const PriceCardsList = () => {
   const [isActiveid, setIsActiveId] = useState(null);
@@ -276,7 +276,7 @@ const PriceCardsList = () => {
           </StyledList>
         </Flipper>
       </Container>
-      <Form />
+      <Forma />
     </StyledWrap>
   );
 };
