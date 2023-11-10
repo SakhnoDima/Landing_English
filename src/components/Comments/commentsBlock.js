@@ -5,7 +5,6 @@ import natalia from 'images/review_4.png';
 import anna from 'images/svg/default-female.svg';
 import ignacy from 'images/svg/default-male.svg';
 import kinga from 'images/svg/default-f.svg';
-import konrad from 'images/svg/default-m.svg';
 
 const commentsBlocks = [
   {
@@ -49,12 +48,6 @@ const commentsBlocks = [
     name: 'Kinga',
     profession: 'IT Specialist',
     text: `"Lekcje angielskiego z Victorią to prawdziwa przyjemność. Victoria jest zawsze przygotowana do zajęć, ma ze sobą dodatkowe, ciekawe materiały, na zajęciach panuje przyjazna atmosfera. Victoria jest zawsze uśmiechnięta i pozytywnie nastawiona do studentów. Stara się przygotować materiały w dopasowaniu do potrzeb, a nawet zainteresowań studentów. Jeżeli chcecie nauczyć się angielskiego lub nie stracić kontaktu z językiem to bardzo polecam zajęcia z Victorią."`,
-  },
-  {
-    img: konrad,
-    name: 'Konrad',
-    profession: 'Key Account Manager',
-    text: `"Dzięki lekcjom, mówienie w języku angielskim przestało być dla mnie stresujące co bardzo pomogło mi zarówno w rozmowach biznesowych jak i prywatnych z obcokrajowcami. Zdecydowanie polecam zarówno zajęcia grupowe jak i lekcje indywidualne."`,
   },
 ];
 

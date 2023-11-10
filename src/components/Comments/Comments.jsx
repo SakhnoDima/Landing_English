@@ -92,7 +92,7 @@ const Comments = () => {
   return (
     <WrapperBackground>
       <Container>
-        <Title>What my clients say?</Title>
+        <Title>What my clients say...</Title>
 
         <Slider {...settings} key={windowWidth}>
           {commentsBlocks.map(({ img, name, profession, text }, idx) => {
