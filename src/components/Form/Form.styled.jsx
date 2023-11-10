@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const FormWrapper = styled.div`
   margin: 0 auto;
@@ -28,6 +28,35 @@ export const InputWrap = styled.div`
   position: relative;
   gap: 16px;
   width: 295px;
+
+  input[name='clientEmail'] {
+    ${({ $error }) =>
+      $error === 'true' &&
+      css`
+        background: rgba(255, 212, 212, 0.4);
+        border: 1px solid #b83927;
+      `};
+    &:focus {
+      ~ span {
+        color: transparent;
+      }
+    }
+  }
+
+  span {
+    position: absolute;
+    top: 140px;
+    right: 105px;
+    color: #ff2b55;
+
+    @media screen and (min-width: 768px) {
+      right: 164px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      top: 152px;
+    }
+  }
 
   @media screen and (min-width: 768px) {
     width: 353px;
@@ -72,20 +101,5 @@ export const InputWrap = styled.div`
   textarea {
     resize: none;
     height: 118px;
-  }
-
-  span {
-    position: absolute;
-    top: 140px;
-    right: 105px;
-    color: #ff2b55;
-
-    @media screen and (min-width: 768px) {
-      right: 164px;
-    }
-
-    @media screen and (min-width: 1440px) {
-      top: 152px;
-    }
   }
 `;
