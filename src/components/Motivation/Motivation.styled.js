@@ -5,8 +5,7 @@ import { ReactComponent as Stress } from 'images/svg/stress.svg';
 import { ReactComponent as Motivation } from 'images/svg/motivation.svg';
 import { ReactComponent as Intersactive } from 'images/svg/intersactive.svg';
 import { ReactComponent as Cooperation } from 'images/svg/cooperation.svg';
-import { titleAnimation } from 'constants/constants';
-import { cardsAnimation } from './cardsInfo';
+import { titleAnimation, defaultAnimation } from 'constants/constants';
 
 export const TitleStyles = styled(motion.h2)`
   font-size: 28px;
@@ -82,7 +81,7 @@ const WrapperContainerStyles = styled(motion.div)`
 export const WrapperContainer = ({ children, idx }) => {
   return (
     <WrapperContainerStyles
-      variants={cardsAnimation}
+      variants={defaultAnimation}
       custom={idx}
       whileInView="animate"
       initial="initial"

@@ -1,17 +1,19 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { ReactComponent as ArrowLeft } from 'images/svg/arrow-left.svg';
 import { ReactComponent as ArrowRight } from 'images/svg/arrow-right.svg';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { titleAnimation } from 'constants/constants';
 
 export const WrapperBackground = styled.section`
   background-color: var(--background-color-white);
   scroll-margin-block-start: 150px;
 `;
 
-export const Title = styled.h2`
+const TitleStyles = styled(motion.h2)`
   font-size: 28px;
   margin-bottom: 24px;
   display: flex;
@@ -30,6 +32,19 @@ export const Title = styled.h2`
     margin-bottom: 40px;
   }
 `;
+
+export const Title = ({ children }) => {
+  return (
+    <TitleStyles
+      variants={titleAnimation}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+    >
+      {children}
+    </TitleStyles>
+  );
+};
 
 export const WrapperMain = styled.div`
   position: relative;

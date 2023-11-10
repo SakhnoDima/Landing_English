@@ -74,3 +74,15 @@ export const titleAnimation = {
     },
   },
 };
+
+export const defaultAnimation = {
+  initial: {
+    y: 100,
+    opacity: 0,
+  },
+  animate: (idx = 0) => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: 0.1 * idx, type: 'spring' },
+  }),
+};

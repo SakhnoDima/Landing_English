@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { defaultAnimation } from 'constants/constants';
 
 export const CompanyRengier = styled.img`
   width: 178px;
@@ -30,7 +32,7 @@ export const CompanyEteria = styled.img`
   }
 `;
 
-export const CompanyWrapper = styled.section`
+const CompanyWrapperStyles = styled(motion.section)`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -51,3 +53,15 @@ export const CompanyWrapper = styled.section`
     gap: 40px;
   }
 `;
+
+export const CompanyWrapper = ({ children }) => (
+  <CompanyWrapperStyles
+    id="clients"
+    variants={defaultAnimation}
+    whileInView="animate"
+    initial="initial"
+    viewport={{ once: true }}
+  >
+    {children}
+  </CompanyWrapperStyles>
+);

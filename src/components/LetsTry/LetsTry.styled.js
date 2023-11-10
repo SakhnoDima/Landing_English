@@ -1,6 +1,7 @@
-import { cardsAnimation } from 'components/Motivation/cardsInfo';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+
+import { defaultAnimation } from '../../constants/constants';
 
 const TextStyle = styled(motion.p)`
   position: relative;
@@ -77,7 +78,7 @@ const TextStyle = styled(motion.p)`
 export const Text = ({ children }) => {
   return (
     <TextStyle
-      variants={cardsAnimation}
+      variants={defaultAnimation}
       initial="initial"
       whileInView="animate"
       viewport={{ once: true }}
@@ -208,7 +209,7 @@ const ButtonStyles = styled(motion.button)`
 
 export const Button = ({ children }) => (
   <ButtonStyles
-    variants={cardsAnimation}
+    variants={defaultAnimation}
     initial="initial"
     whileInView="animate"
     viewport={{ once: true }}

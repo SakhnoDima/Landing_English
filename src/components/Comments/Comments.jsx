@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
+import { motion } from 'framer-motion';
 
 import LinesEllipsis from 'react-lines-ellipsis';
 
@@ -22,6 +23,7 @@ import {
   WrapperBackground,
 } from './Comments.styled';
 import Container from 'components/Container/Container';
+import { defaultAnimation } from 'constants/constants';
 
 const Comments = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -93,57 +95,63 @@ const Comments = () => {
     <WrapperBackground id="whatMyClientsSay">
       <Container>
         <Title>What my clients say...</Title>
+        <motion.div
+          variants={defaultAnimation}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <Slider {...settings} key={windowWidth}>
+            {commentsBlocks.map(({ img, name, profession, text }, idx) => {
+              const isActive = idx === activeSlide;
+              const expanded = isExpanded[idx];
+              const lines = text.split(' ').length;
 
-        <Slider {...settings} key={windowWidth}>
-          {commentsBlocks.map(({ img, name, profession, text }, idx) => {
-            const isActive = idx === activeSlide;
-            const expanded = isExpanded[idx];
-            const lines = text.split(' ').length;
-
-            return (
-              <WrapperMain
-                style={{
-                  width,
-                  height: expanded ? 'auto' : '',
-                }}
-                key={idx}
-                className={isActive ? 'activeSlide' : ''}
-              >
-                <WrapperPersonal>
-                  <img src={img} alt={name} />
-                  <WrapperInfo>
-                    <PersonalInfoName>{name}</PersonalInfoName>
-                    <PersonalInfoProf>{profession}</PersonalInfoProf>
-                  </WrapperInfo>
-                </WrapperPersonal>
-                <TextArea $isExpanded={expanded}>
-                  {expanded ? (
-                    <Text $isExpanded={expanded}>{text}</Text>
-                  ) : (
-                    <LinesEllipsis
-                      component={Text}
-                      text={text}
-                      maxLine={maxLines}
-                      ellipsis="..."
-                      trimRight
-                      basedOn="letters"
-                    />
-                  )}
-                  {(lines > 34 && isDesktop) ||
-                  (lines > 40 && isTablet) ||
-                  lines > 41 ? (
-                    <ReadMore
-                      $isExpanded={expanded}
-                      onClick={() => toggleExpand(idx)}
-                    >
-                      read more
-                    </ReadMore>
-                  ) : null}
-                </TextArea>
-              </WrapperMain>
-            );
-          })}
-        </Slider>
+              return (
+                <WrapperMain
+                  style={{
+                    width,
+                    height: expanded ? 'auto' : '',
+                  }}
+                  key={idx}
+                  className={isActive ? 'activeSlide' : ''}
+                >
+                  <WrapperPersonal>
+                    <img src={img} alt={name} />
+                    <WrapperInfo>
+                      <PersonalInfoName>{name}</PersonalInfoName>
+                      <PersonalInfoProf>{profession}</PersonalInfoProf>
+                    </WrapperInfo>
+                  </WrapperPersonal>
+                  <TextArea $isExpanded={expanded}>
+                    {expanded ? (
+                      <Text $isExpanded={expanded}>{text}</Text>
+                    ) : (
+                      <LinesEllipsis
+                        component={Text}
+                        text={text}
+                        maxLine={maxLines}
+                        ellipsis="..."
+                        trimRight
+                        basedOn="letters"
+                      />
+                    )}
+                    {(lines > 34 && isDesktop) ||
+                    (lines > 40 && isTablet) ||
+                    lines > 41 ? (
+                      <ReadMore
+                        $isExpanded={expanded}
+                        onClick={() => toggleExpand(idx)}
+                      >
+                        read more
+                      </ReadMore>
+                    ) : null}
+                  </TextArea>
+                </WrapperMain>
+              );
+            })}
+          </Slider>
+        </motion.div>
       </Container>
     </WrapperBackground>
   );
