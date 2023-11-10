@@ -10,8 +10,7 @@ export const StyledWrap = styled.div`
   padding: 60px 0;
 
   @media screen and (min-width: 768px) {
-    padding: 80px 0 0 0;
-    margin-bottom: 35px;
+    padding: 80px 0 35px 0;
   }
 `;
 export const StyledList = styled.ul`
