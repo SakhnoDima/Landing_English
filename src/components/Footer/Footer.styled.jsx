@@ -51,7 +51,7 @@ export const NameStyled = styled.p`
   text-align: center;
 
   @media screen and (min-width: ${breakpoints.tab}px) {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 500;
     text-align: left;
     margin-bottom: 24px;
