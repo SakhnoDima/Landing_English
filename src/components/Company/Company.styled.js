@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { defaultAnimation } from 'constants/constants';
+import { animationSettings } from 'constants/constants';
 
 export const CompanyRengier = styled.img`
   width: 178px;
@@ -55,13 +55,7 @@ const CompanyWrapperStyles = styled(motion.section)`
 `;
 
 export const CompanyWrapper = ({ children }) => (
-  <CompanyWrapperStyles
-    id="clients"
-    variants={defaultAnimation}
-    whileInView="animate"
-    initial="initial"
-    viewport={{ once: true }}
-  >
+  <CompanyWrapperStyles id="clients" {...animationSettings}>
     {children}
   </CompanyWrapperStyles>
 );

@@ -86,3 +86,10 @@ export const defaultAnimation = {
     transition: { delay: 0.1 * idx, type: 'spring' },
   }),
 };
+
+export const animationSettings = {
+  variants: defaultAnimation,
+  whileInView: 'animate',
+  initial: 'initial',
+  viewport: { once: true },
+};

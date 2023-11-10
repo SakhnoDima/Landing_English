@@ -1,12 +1,14 @@
 import styled from 'styled-components';
-import { breakpoints } from 'constants/constants';
+import { motion } from 'framer-motion';
+
+import { animationSettings, breakpoints } from 'constants/constants';
 
 export const StyledFooter = styled.footer`
   background-color: var(--background-white);
   scroll-margin-block-end: 0px;
 `;
 
-export const Wrapper = styled.div`
+const WrapperStyles = styled(motion.div)`
   padding: 32px 0;
   display: flex;
   flex-direction: column;
@@ -23,6 +25,10 @@ export const Wrapper = styled.div`
     margin: 0 auto;
   }
 `;
+
+export const Wrapper = ({ children }) => (
+  <WrapperStyles {...animationSettings}>{children}</WrapperStyles>
+);
 
 export const TitleStyled = styled.h3`
   font-size: 28px;

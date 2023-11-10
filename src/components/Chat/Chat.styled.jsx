@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components';
 
+import { animationSettings } from 'constants/constants';
+import { motion } from 'framer-motion';
+
 export const StyledWrapper = styled.div`
   margin-bottom: 60px;
   padding: 0 16px;
@@ -12,7 +15,7 @@ export const StyledWrapper = styled.div`
     padding: 0 120px;
   }
 `;
-export const StyledDivTop = styled.div`
+const StyledDivTopStyles = styled.div`
   padding-bottom: 30px;
 
   @media screen and (min-width: 768px) {
@@ -20,10 +23,20 @@ export const StyledDivTop = styled.div`
   }
 `;
 
-export const StyledDivBottom = styled.div`
+export const StyledDivTop = ({ children }) => (
+  <StyledDivTopStyles {...animationSettings}>{children}</StyledDivTopStyles>
+);
+
+const StyledDivBottomStyles = styled(motion.div)`
   display: flex;
   justify-content: flex-end;
 `;
+
+export const StyledDivBottom = ({ children }) => (
+  <StyledDivBottomStyles {...animationSettings}>
+    {children}
+  </StyledDivBottomStyles>
+);
 
 export const tailStyles = css`
   content: '';

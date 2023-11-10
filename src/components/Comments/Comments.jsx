@@ -23,7 +23,7 @@ import {
   WrapperBackground,
 } from './Comments.styled';
 import Container from 'components/Container/Container';
-import { defaultAnimation } from 'constants/constants';
+import { animationSettings } from 'constants/constants';
 
 const Comments = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -96,10 +96,7 @@ const Comments = () => {
       <Container>
         <Title>What my clients say...</Title>
         <motion.div
-          variants={defaultAnimation}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
+          {...animationSettings}
         >
           <Slider {...settings} key={windowWidth}>
             {commentsBlocks.map(({ img, name, profession, text }, idx) => {

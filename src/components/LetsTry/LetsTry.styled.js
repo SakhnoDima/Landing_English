@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import { defaultAnimation } from '../../constants/constants';
+import { animationSettings } from '../../constants/constants';
 
 const TextStyle = styled(motion.p)`
   position: relative;
@@ -76,16 +76,7 @@ const TextStyle = styled(motion.p)`
 `;
 
 export const Text = ({ children }) => {
-  return (
-    <TextStyle
-      variants={defaultAnimation}
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
-    >
-      {children}
-    </TextStyle>
-  );
+  return <TextStyle {...animationSettings}>{children}</TextStyle>;
 };
 
 export const TextSpan = styled.span`
@@ -208,12 +199,5 @@ const ButtonStyles = styled(motion.button)`
 `;
 
 export const Button = ({ children }) => (
-  <ButtonStyles
-    variants={defaultAnimation}
-    initial="initial"
-    whileInView="animate"
-    viewport={{ once: true }}
-  >
-    {children}
-  </ButtonStyles>
+  <ButtonStyles {...animationSettings}>{children}</ButtonStyles>
 );

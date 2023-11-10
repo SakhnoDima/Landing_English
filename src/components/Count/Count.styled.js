@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { ReactComponent as ArrowFlexble } from 'images/svg/arrow.svg';
-import { titleAnimation } from 'constants/constants';
+import { animationSettings, titleAnimation } from 'constants/constants';
 
 export const Wrapper = styled.section`
   background-color: var(--background-white);
@@ -167,10 +167,7 @@ const ItemWrapperStyles = styled(motion.div)`
 export const ItemWrapper = ({ children }) => {
   return (
     <ItemWrapperStyles
-      variants={titleAnimation}
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
+      {...animationSettings}
     >
       {children}
     </ItemWrapperStyles>
