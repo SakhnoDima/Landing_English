@@ -4,11 +4,11 @@ import Company from 'components/Company/Company';
 
 const ClientSay = () => {
   return (
-    <section>
+    <>
       <Comments />
       <Company />
       <PriceCardsList />
-    </section>
+    </>
   );
 };
 

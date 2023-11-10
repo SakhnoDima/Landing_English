@@ -16,7 +16,7 @@ import Container from 'components/Container/Container';
 
 const Footer = () => {
   return (
-    <StyledFooter>
+    <StyledFooter id='contact'>
       <Container>
         <Wrapper>
           <div>

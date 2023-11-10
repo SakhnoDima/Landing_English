@@ -14,7 +14,7 @@ import {
 
 const Count = () => {
   return (
-    <Wrapper>
+    <Wrapper id="howItWorks">
       <Container>
         <Title>How does it work?</Title>
         <CountWrapper>
