@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { ReactComponent as ArrowFlexble } from 'images/svg/arrow.svg';
+import { titleAnimation } from 'constants/constants';
 
 export const Wrapper = styled.section`
   background-color: var(--background-white);
@@ -11,7 +13,7 @@ export const Wrapper = styled.section`
   }
 `;
 
-export const Title = styled.h2`
+const TitleStyles = styled(motion.h2)`
   font-size: 28px;
   text-align: center;
   margin-bottom: 24px;
@@ -28,6 +30,19 @@ export const Title = styled.h2`
     margin-bottom: 42px;
   }
 `;
+
+export const Title = ({ children }) => {
+  return (
+    <TitleStyles
+      variants={titleAnimation}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+    >
+      {children}
+    </TitleStyles>
+  );
+};
 
 export const CountWrapper = styled.div`
   display: flex;
@@ -141,6 +156,26 @@ export const CountItem = styled.li`
     font-size: 16px;
   }
 `;
+
+const ItemWrapperStyles = styled(motion.div)`
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const ItemWrapper = ({ children }) => {
+  return (
+    <ItemWrapperStyles
+      variants={titleAnimation}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+    >
+      {children}
+    </ItemWrapperStyles>
+  );
+};
 
 export const CountWrapperList = styled.div`
   gap: 8px;

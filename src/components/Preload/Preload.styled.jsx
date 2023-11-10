@@ -19,12 +19,12 @@ const container = {
   initial: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { duration: 0.5 },
+    transition: { duration: 0.7 },
   },
 };
 
 const PreloadComponent = ({ children }) => (
-  <PreloadStyles variants={container} initial='initial' animate='show'>
+  <PreloadStyles variants={container} initial="initial" animate="show">
     {children}
   </PreloadStyles>
 );
