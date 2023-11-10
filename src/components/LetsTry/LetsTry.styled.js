@@ -1,6 +1,8 @@
+import { cardsAnimation } from 'components/Motivation/cardsInfo';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const Text = styled.p`
+const TextStyle = styled(motion.p)`
   position: relative;
   background: var(--background-color-white);
   border: 1px solid var(--black);
@@ -72,6 +74,19 @@ export const Text = styled.p`
   }
 `;
 
+export const Text = ({ children }) => {
+  return (
+    <TextStyle
+      variants={cardsAnimation}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+    >
+      {children}
+    </TextStyle>
+  );
+};
+
 export const TextSpan = styled.span`
   display: block;
   @media (min-width: 768px) {
@@ -83,7 +98,7 @@ export const TextSpanSecondary = styled.span`
   display: block;
 `;
 
-export const Button = styled.button`
+const ButtonStyles = styled(motion.button)`
   position: relative;
   background: var(--orange-primary);
   border: 1px solid var(--orange-primary);
@@ -190,3 +205,14 @@ export const Button = styled.button`
     }
   }
 `;
+
+export const Button = ({ children }) => (
+  <ButtonStyles
+    variants={cardsAnimation}
+    initial="initial"
+    whileInView="animate"
+    viewport={{ once: true }}
+  >
+    {children}
+  </ButtonStyles>
+);

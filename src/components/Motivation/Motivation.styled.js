@@ -1,11 +1,14 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { ReactComponent as Stress } from 'images/svg/stress.svg';
 import { ReactComponent as Motivation } from 'images/svg/motivation.svg';
 import { ReactComponent as Intersactive } from 'images/svg/intersactive.svg';
 import { ReactComponent as Cooperation } from 'images/svg/cooperation.svg';
+import { titleAnimation } from 'constants/constants';
+import { cardsAnimation } from './cardsInfo';
 
-export const Title = styled.h2`
+export const TitleStyles = styled(motion.h2)`
   font-size: 28px;
   line-height: normal;
   margin-bottom: 59px;
@@ -16,6 +19,19 @@ export const Title = styled.h2`
     margin-bottom: 86px;
   }
 `;
+
+export const Title = ({ children }) => {
+  return (
+    <TitleStyles
+      variants={titleAnimation}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+    >
+      {children}
+    </TitleStyles>
+  );
+};
 
 export const WrapperContainerAll = styled.div`
   display: flex;
@@ -38,7 +54,7 @@ export const WrapperContainerAll = styled.div`
   }
 `;
 
-export const WrapperContainer = styled.div`
+const WrapperContainerStyles = styled(motion.div)`
   display: flex;
   width: 343px;
   padding: 32px 12px;
@@ -62,6 +78,20 @@ export const WrapperContainer = styled.div`
     gap: 16px;
   }
 `;
+
+export const WrapperContainer = ({ children, idx }) => {
+  return (
+    <WrapperContainerStyles
+      variants={cardsAnimation}
+      custom={idx}
+      whileInView="animate"
+      initial="initial"
+      viewport={{ once: true }}
+    >
+      {children}
+    </WrapperContainerStyles>
+  );
+};
 
 export const StressIcon = styled(Stress)`
   width: 70px;
