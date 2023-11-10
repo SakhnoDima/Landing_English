@@ -176,7 +176,7 @@ export const Button = styled.button`
     width: 253px;
     height: 42px;
     padding: 0px 84px;
-    left: 945px;
+    left: 930px;
     margin-bottom: 78px;
 
     &:after {
