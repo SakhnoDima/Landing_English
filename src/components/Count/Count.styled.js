@@ -72,6 +72,18 @@ export const CountContainer = styled.div`
   border-radius: 8px;
   border: 3px solid var(--border-white-blue);
   box-sizing: border-box;
+  transition: 500ms;
+
+  &:hover,
+  &:focus {
+    background-color: var(--border-white-blue);
+    transition: 500ms;
+
+    & h3,
+    & li {
+      color: var(--black);
+    }
+  }
 
   @media (min-width: 768px) {
     height: 273px;

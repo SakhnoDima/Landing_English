@@ -100,16 +100,20 @@ export const Button = styled.button`
   margin-bottom: 18px;
 
   &:hover,
-  &:focus,
-  &:active {
+  &:focus {
     color: var(--orange-primary);
     background: var(--background-color-white);
+  }
+
+  &:active {
+    color: var(--orange-primary);
+    background: var(--passed);
   }
 
   &:after {
     content: '';
     position: absolute;
-    right: 18.5px;
+    right: 19px;
     top: 99%;
     border-width: 10px;
     border-style: solid;
@@ -119,10 +123,13 @@ export const Button = styled.button`
   }
 
   &:hover:after,
-  &:focus:after,
-  &:active:after {
+  &:focus:after {
     border-color: var(--background-color-white) transparent transparent
       var(--background-color-white);
+  }
+
+  &:active:after {
+    border-color: var(--passed) transparent transparent var(--passed);
   }
 
   &:before {
