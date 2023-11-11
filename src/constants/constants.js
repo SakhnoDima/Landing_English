@@ -7,11 +7,11 @@ export const breakpoints = {
 export const sectionLinks = [
   {
     link: '#howItWorks',
-    text: 'How does it work',
+    text: 'How does it work?',
   },
   {
     link: '#whyMe',
-    text: 'Why me',
+    text: 'Why me?',
   },
   {
     link: '#whatMyClientsSay',

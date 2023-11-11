@@ -12,7 +12,7 @@ const Nav = styled(motion.div)`
   z-index: 999;
   .close-btn {
     position: absolute;
-    top: 20px;
+    top: 45px;
     right: 12px;
     width: 48px;
     height: 48px;
@@ -28,10 +28,12 @@ const Nav = styled(motion.div)`
   }
 
   @media screen and (min-width: 1440px) {
-    opacity: 0.8;
+    opacity: 0.95;
     .close-btn {
       width: 32px;
       height: 32px;
+      top: 45px;
+      right: 115px;
     }
   }
 `;
