@@ -4,17 +4,20 @@ import { animationSettings } from 'constants/constants';
 import { motion } from 'framer-motion';
 
 export const StyledWrapper = styled.div`
+  margin: 0 auto;
   margin-bottom: 60px;
-  padding: 0 16px;
+  width: 343px;
+
   @media screen and (min-width: 768px) {
     margin-bottom: 55px;
-    padding: 0 40px;
+    width: 688px;
   }
   @media screen and (min-width: 1440px) {
     margin-bottom: 40px;
-    padding: 0 120px;
+    width: 1200px;
   }
 `;
+
 const StyledDivTopStyles = styled.div`
   padding-bottom: 30px;
 
@@ -51,7 +54,7 @@ export const StyledPTop = styled.p`
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
-  padding: 17px 22px 18px 28px;
+  padding: 17px 22px 10px 28px;
   width: 334px;
   height: 64px;
   border-radius: 30px;
