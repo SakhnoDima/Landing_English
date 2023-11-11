@@ -52,6 +52,7 @@ export const UlComponent = styled.ul`
   color: #000000;
   li {
     cursor: pointer;
+    font-family: 'Anek Bangla';
     font-size: 20px;
     font-weight: 500;
     line-height: 37px;
@@ -65,6 +66,14 @@ export const UlComponent = styled.ul`
   }
   li:active {
     color: var(--orange-secondary);
+  }
+
+  @media screen and (min-width: 1440px) {
+    li {
+      text-align: right;
+      font-size: 24px;
+      line-height: 45px;
+    }
   }
 `;
 

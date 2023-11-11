@@ -21,14 +21,14 @@ const Hero = () => {
       <HeroSection>
         <motion.p
           initial={{ y: 100 }}
-          animate={{ y: 0, transition: { duration: 0.7 } }}
+          animate={{ y: 0, transition: { duration: 0.7, delay: 1.2 } }}
           className="hero__title"
         >
           Hello there!
         </motion.p>
         <motion.h1
           initial={{ y: 100 }}
-          animate={{ y: 0, transition: { duration: 0.7, delay: 0.1 } }}
+          animate={{ y: 0, transition: { duration: 0.7, delay: 1.3 } }}
           className="hero__title"
         >
           I'm Victoria, your Language Coach{' '}

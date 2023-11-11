@@ -3,12 +3,14 @@ import { motion } from 'framer-motion';
 import { ReactComponent as Logo } from '../../images/svg/logo.svg';
 
 import PreloadComponent from './Preload.styled';
+import { useRef } from 'react';
+import { useEffect } from 'react';
 
 const styles = {
   width: '100vw',
   height: '100vh',
   background: 'var(--background-color-white)',
-  position: 'absolute',
+  position: 'fixed',
   top: 0,
   left: 0,
   zIndex: 10000,
@@ -18,19 +20,27 @@ const styles = {
 };
 
 const logo = {
-    initial: { opacity: 1 },
-    show: {
-      opacity: 0,
-      transition: {
-        delay: 0.5,
-        duration: 0.5
-      },
+  initial: { opacity: 1 },
+  show: {
+    opacity: 0,
+    transition: {
+      delay: 0.5,
+      duration: 0.5,
     },
-  };
+  },
+};
 
 const Preload = () => {
+  const ref = useRef();
+
+  useEffect(() => {
+    setTimeout(() => {
+      ref.current.style.display = 'none';
+    }, 1200);
+  });
+
   return (
-    <div style={styles}>
+    <div ref={ref} style={styles}>
       <PreloadComponent>
         <motion.div variants={logo}>
           <Logo className="logo" />
