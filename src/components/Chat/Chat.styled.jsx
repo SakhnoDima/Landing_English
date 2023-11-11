@@ -15,7 +15,7 @@ export const StyledWrapper = styled.div`
     padding: 0 120px;
   }
 `;
-const StyledDivTopStyles = styled.div`
+const StyledDivTopStyles = styled(motion.div)`
   padding-bottom: 30px;
 
   @media screen and (min-width: 768px) {
