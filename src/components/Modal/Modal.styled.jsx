@@ -62,9 +62,21 @@ const OverlayStyles = styled(motion.div)`
   background: rgba(112, 112, 112, 0.5);
 `;
 
-export const Overlay = ({ children }) => (
-  <OverlayStyles>{children}</OverlayStyles>
-);
+export const Overlay = ({ children, handleClick }) => {
+  const handleBackdropClick = e =>
+    e.target === e.currentTarget ? handleClick() : null;
+
+  return (
+    <OverlayStyles
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+      onClick={handleBackdropClick}
+    >
+      {children}
+    </OverlayStyles>
+  );
+};
 
 const ModalPlaceholder = ({ children }) => (
   <ModalStyles>{children}</ModalStyles>

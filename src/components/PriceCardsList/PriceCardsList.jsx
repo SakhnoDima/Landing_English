@@ -15,6 +15,7 @@ import {
 } from './PriceCardsList.styled';
 import Chat from 'components/Chat/Chat';
 import Container from 'components/Container/Container';
+import { useModal } from 'hooks/ModalContext';
 
 const PriceCardsList = () => {
   const [isActiveid, setIsActiveId] = useState(null);
@@ -25,6 +26,7 @@ const PriceCardsList = () => {
     maternityLeave: false,
   });
   const [widthActive, setWidthEctive] = useState(null);
+  const { openModal } = useModal();
 
   const toggleDetails = (card, cardElement) => {
     const windowSize = window.innerWidth;
@@ -83,7 +85,11 @@ const PriceCardsList = () => {
                 )}
                 {showDetails.specificGoal ? (
                   <div style={{ marginTop: 'auto' }}>
-                    <Button $type={'secondary'} $size={'choose'}>
+                    <Button
+                      $type={'secondary'}
+                      $size={'choose'}
+                      handleClick={() => openModal('specific goal')}
+                    >
                       <p>Choose</p>
                     </Button>
                   </div>
@@ -125,7 +131,11 @@ const PriceCardsList = () => {
                 )}
                 {showDetails.lazyStart ? (
                   <div style={{ marginTop: 'auto' }}>
-                    <Button $type={'secondary'} $size={'choose'}>
+                    <Button
+                      $type={'secondary'}
+                      $size={'choose'}
+                      handleClick={() => openModal('lazy start')}
+                    >
                       <p>Choose</p>
                     </Button>
                   </div>
@@ -167,7 +177,11 @@ const PriceCardsList = () => {
                 )}
                 {showDetails.tiredLessons ? (
                   <div style={{ marginTop: 'auto' }}>
-                    <Button $type={'secondary'} $size={'choose'}>
+                    <Button
+                      $type={'secondary'}
+                      $size={'choose'}
+                      handleClick={() => openModal('tired of lessons')}
+                    >
                       <p>Choose</p>
                     </Button>
                   </div>
@@ -208,7 +222,11 @@ const PriceCardsList = () => {
                 )}
                 {showDetails.maternityLeave ? (
                   <div style={{ marginTop: 'auto' }}>
-                    <Button $type={'secondary'} $size={'choose'}>
+                    <Button
+                      $type={'secondary'}
+                      $size={'choose'}
+                      handleClick={() => openModal('maternity leave')}
+                    >
                       <p>Choose</p>
                     </Button>
                   </div>

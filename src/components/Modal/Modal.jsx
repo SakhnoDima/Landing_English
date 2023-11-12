@@ -1,19 +1,10 @@
-import { ReactDOM } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
-import { ReactComponent as SvgBg } from '../../images/svg/form_svg.svg';
-import { ReactComponent as Close } from '../../images/svg/x.svg';
-
-import Form from '../Form/Form';
-import ModalPlaceholder, { Overlay } from './Modal.styled';
+import { useModal } from 'hooks/ModalContext';
+import ModalPortal from './ModalPortal';
 
 export const Modal = () => {
-  return ReactDOM.createPortal(
-    <Overlay>
-      <ModalPlaceholder>
-        <Form />
-        <Close className="close" />
-        <SvgBg className="bg" />
-      </ModalPlaceholder>
-    </Overlay>
-  );
+  const { isOpen } = useModal();
+
+  return <AnimatePresence>{isOpen && <ModalPortal />}</AnimatePresence>;
 };
