@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Landing_English/static/css/main.732e4442.css",
-    "main.js": "/Landing_English/static/js/main.8e81f361.js",
+    "main.js": "/Landing_English/static/js/main.dac18815.js",
     "static/media/hero_bg.png": "/Landing_English/static/media/hero_bg.c687c161e2044a418dd4.png",
     "static/media/backDesk.png": "/Landing_English/static/media/backDesk.f6a950ea0d6a60d01ba6.png",
     "static/media/backTab.png": "/Landing_English/static/media/backTab.b2fd7e260ba38b48c7da.png",
@@ -10,6 +10,7 @@
     "static/media/Victoria.png": "/Landing_English/static/media/Victoria.e94256acb20fcf92ee4e.png",
     "static/media/whyMe_tablet.png": "/Landing_English/static/media/whyMe_tablet.51d99d4c6ff9c97c91dc.png",
     "static/media/whyMe_mobile.png": "/Landing_English/static/media/whyMe_mobile.7aa0149ac6bc1c6a27f1.png",
+    "static/media/form_svg.svg": "/Landing_English/static/media/form_svg.90037fb2372cc78caa7a8a49a8d17147.svg",
     "static/media/logo.svg": "/Landing_English/static/media/logo.8075e3be9208d51f07ee30c468ddcd83.svg",
     "static/media/bg.svg": "/Landing_English/static/media/bg.2833d1c4be12eddc501005b8527c562d.svg",
     "static/media/eteria.png": "/Landing_English/static/media/eteria.68ed9db68439b2d072cb.png",
@@ -42,10 +43,10 @@
     "static/media/arrow-left.svg": "/Landing_English/static/media/arrow-left.d9ea8f698f40741eddfc6de4b84786a1.svg",
     "static/media/arrow-right.svg": "/Landing_English/static/media/arrow-right.4363a2108874a2ab834e9d98df721be1.svg",
     "main.732e4442.css.map": "/Landing_English/static/css/main.732e4442.css.map",
-    "main.8e81f361.js.map": "/Landing_English/static/js/main.8e81f361.js.map"
+    "main.dac18815.js.map": "/Landing_English/static/js/main.dac18815.js.map"
   },
   "entrypoints": [
     "static/css/main.732e4442.css",
-    "static/js/main.8e81f361.js"
+    "static/js/main.dac18815.js"
   ]
 }
