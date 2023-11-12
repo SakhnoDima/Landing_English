@@ -61,12 +61,14 @@ export const UlComponent = styled.ul`
     letter-spacing: 0em;
     a {
       color: inherit;
+      outline: none;
     }
   }
   li:is(:hover, :focus-within) {
     color: var(--orange-primary);
   }
-  li:active {
+  li:active,
+  .active {
     color: var(--orange-secondary);
   }
 
