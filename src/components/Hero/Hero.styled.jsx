@@ -68,6 +68,10 @@ export const HeroDescription = styled.p`
   span {
     font-weight: 500;
   }
+  @media screen and (min-width: 768px) {
+    position: relative;
+    background-color: inherit;
+  }
 
   @media screen and (min-width: 768px) and (max-width: 1339.9px) {
     max-width: 429px;
