@@ -1,6 +1,9 @@
+import { useModal } from 'hooks/ModalContext';
 import { Text, TextSpan, Button, TextSpanSecondary } from './LetsTry.styled';
 
 const LetsTry = () => {
+  const { openModal } = useModal();
+
   return (
     <>
       <Text>
@@ -16,7 +19,7 @@ const LetsTry = () => {
           Contact me to learn what benefits<TextSpan> you can get.</TextSpan>
         </TextSpanSecondary>
       </Text>
-      <Button>Let`s try !</Button>
+      <Button onClick={openModal}>Let`s try !</Button>
     </>
   );
 };

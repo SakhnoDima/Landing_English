@@ -9,12 +9,14 @@ import {
   ReadMoreBtn,
   CloseTextBtn,
 } from './Hero.styled';
+import { useModal } from '../../hooks/ModalContext';
 import Button from '../Button/Button';
 import { LogoAnimate } from './LogoAnimate';
 import Container from 'components/Container/Container';
 
 const Hero = () => {
   const [isReadMore, setReadMore] = useState(false);
+  const { openModal } = useModal();
 
   return (
     <Container hero={true}>
@@ -66,7 +68,7 @@ const Hero = () => {
           )}
         </DescWrapper>
         <LogoAnimate />
-        <Button $type="origin" $size="hero">
+        <Button $type="origin" $size="hero" handleClick={openModal}>
           Book a trial lesson
         </Button>
       </HeroSection>
