@@ -43,17 +43,43 @@ const ModalStyles = styled(motion.div)`
     padding-block: 80px;
     min-width: 827px;
     .bg {
-        left: 298px;
+      left: 298px;
     }
     .close {
-        top: 42px;
-        right: 54px;
+      top: 42px;
+      right: 54px;
     }
   }
 `;
 
-const ModalPlaceholder = ({ children }) => {
-  return <ModalStyles>{children}</ModalStyles>;
+const OverlayStyles = styled(motion.div)`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: rgba(112, 112, 112, 0.5);
+`;
+
+export const Overlay = ({ children, handleClick }) => {
+  const handleBackdropClick = e =>
+    e.target === e.currentTarget ? handleClick() : null;
+
+  return (
+    <OverlayStyles
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+      onClick={handleBackdropClick}
+    >
+      {children}
+    </OverlayStyles>
+  );
 };
+
+const ModalPlaceholder = ({ children }) => (
+  <ModalStyles>{children}</ModalStyles>
+);
 
 export default ModalPlaceholder;

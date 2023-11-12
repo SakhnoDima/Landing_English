@@ -1,6 +1,10 @@
-const { default: styled } = require('styled-components');
+import styled from 'styled-components';
 
-const obj = {
+import mobBack from 'images/chat_png/backMob.png';
+import tabBack from 'images/chat_png/backTab.png';
+import deskBack from 'images/chat_png/backDesk.png';
+
+const cardsPositions = {
   2: 'b',
   3: 'c',
   4: 'd',
@@ -9,9 +13,17 @@ const obj = {
 export const StyledWrap = styled.section`
   padding: 60px 0;
   scroll-margin-block-start: 80px;
+  background: url(${mobBack});
+  background-size: 'cover';
+  background-position: 'center';
 
   @media screen and (min-width: 768px) {
     padding: 80px 0 35px 0;
+    background: url(${tabBack});
+  }
+
+  @media screen and (min-width: 1440px) {
+    background: url(${deskBack});
   }
 `;
 export const StyledList = styled.ul`
@@ -38,7 +50,8 @@ export const StyledList = styled.ul`
     }
 
     .div1 {
-      grid-area: ${({ $id }) => ($id === 1 ? 'a' : $id ? obj[$id] : 'a')};
+      grid-area: ${({ $id }) =>
+        $id === 1 ? 'a' : $id ? cardsPositions[$id] : 'a'};
     }
     .div2 {
       grid-area: ${({ $id }) => ($id === 2 ? 'a' : 'b')};
@@ -65,6 +78,7 @@ export const StyledList = styled.ul`
 `;
 
 export const StyledCard = styled.li`
+  height: ${({ $condition }) => ($condition ? '411px' : '114px')};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,6 +140,7 @@ export const StyledCard = styled.li`
     }
   }
   @media screen and (min-width: 1440px) {
+    height: ${({ $condition }) => ($condition ? '433px' : '114px')};
     h2 {
       font-size: 20px;
     }

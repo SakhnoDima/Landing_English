@@ -198,6 +198,8 @@ const ButtonStyles = styled(motion.button)`
   }
 `;
 
-export const Button = ({ children }) => (
-  <ButtonStyles {...animationSettings}>{children}</ButtonStyles>
+export const Button = ({ children, onClick }) => (
+  <ButtonStyles {...animationSettings} onClick={onClick}>
+    {children}
+  </ButtonStyles>
 );
