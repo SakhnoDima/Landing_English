@@ -62,6 +62,9 @@ export const HeroDescription = styled.p`
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
+  position: absolute;
+  z-index: 11111;
+  background-color: var(--white);
   span {
     font-weight: 500;
   }
@@ -104,7 +107,7 @@ export const ReadMoreBtn = styled.button`
 export const CloseTextBtn = styled.button`
   position: absolute;
   right: 0;
-  bottom: -6px;
+  bottom: -195px;
   display: flex;
   align-items: center;
   padding: 0;
@@ -116,6 +119,7 @@ export const CloseTextBtn = styled.button`
   letter-spacing: 0em;
   text-align: left;
   color: #466eb6;
+  z-index: 11111;
 
   @media screen and (min-width: 768px) {
     display: none;
