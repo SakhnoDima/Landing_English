@@ -1,9 +1,6 @@
 import Button from 'components/Button/Button';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Flipper, Flipped } from 'react-flip-toolkit';
-import mobBack from 'images/chat_png/backMob.png';
-import tabBack from 'images/chat_png/backTab.png';
-import deskBack from 'images/chat_png/backDesk.png';
 
 import {
   MainParagraphMom,
@@ -21,7 +18,6 @@ import Container from 'components/Container/Container';
 
 const PriceCardsList = () => {
   const [isActiveid, setIsActiveId] = useState(null);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [showDetails, setShowDetails] = useState({
     specificGoal: false,
     lazyStart: false,
@@ -29,33 +25,6 @@ const PriceCardsList = () => {
     maternityLeave: false,
   });
   const [widthActive, setWidthEctive] = useState(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  let backgroundImage;
-
-  if (windowWidth >= 1440) {
-    backgroundImage = deskBack;
-  } else if (windowWidth >= 768) {
-    backgroundImage = tabBack;
-  } else {
-    backgroundImage = mobBack;
-  }
-
-  const background = {
-    background: `url(${backgroundImage})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  };
 
   const toggleDetails = (card, cardElement) => {
     const windowSize = window.innerWidth;
@@ -81,14 +50,8 @@ const PriceCardsList = () => {
     }
   };
 
-  const CardHeight = () => {
-    const conditionResult = windowWidth >= 1440 ? '433px' : '411px';
-
-    return conditionResult;
-  };
-
   return (
-    <StyledWrap style={background} id="myService">
+    <StyledWrap id="myService">
       <Chat />
       <Container>
         <Flipper
@@ -98,9 +61,7 @@ const PriceCardsList = () => {
             <Flipped flipId="specificGoal">
               <StyledCard
                 className="StyledCard div1"
-                style={{
-                  height: showDetails.specificGoal ? CardHeight() : '114px',
-                }}
+                $condition={showDetails.specificGoal}
               >
                 <h2>Do you have a specific goal? </h2>
                 {showDetails.specificGoal && (
@@ -144,9 +105,7 @@ const PriceCardsList = () => {
             <Flipped flipId="lazyStart">
               <StyledCard
                 className="StyledCard div2"
-                style={{
-                  height: showDetails.lazyStart ? CardHeight() : '114px',
-                }}
+                $condition={showDetails.lazyStart}
               >
                 <h2>Lazy to get started?</h2>
                 {showDetails.lazyStart && (
@@ -188,9 +147,7 @@ const PriceCardsList = () => {
             <Flipped flipId="tiredLessons">
               <StyledCard
                 className="StyledCard div3"
-                style={{
-                  height: showDetails.tiredLessons ? CardHeight() : '114px',
-                }}
+                $condition={showDetails.tiredLessons}
               >
                 <h2>Tired of "lessons"?</h2>
                 {showDetails.tiredLessons && (
@@ -232,9 +189,7 @@ const PriceCardsList = () => {
             <Flipped flipId="maternityLeave">
               <StyledCard
                 className="StyledCard div4"
-                style={{
-                  height: showDetails.maternityLeave ? CardHeight() : '114px',
-                }}
+                $condition={showDetails.maternityLeave}
               >
                 <h2>Are you a mum on maternity leave?</h2>
                 {showDetails.maternityLeave && (
