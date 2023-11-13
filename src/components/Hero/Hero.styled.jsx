@@ -87,6 +87,7 @@ export const HeroDescription = styled.p`
 
 const DescWrapperStyles = styled(motion.div)`
   position: relative;
+  margin-bottom: ${({ $isOpen }) => ($isOpen ? '100px' : '0')};
   @media screen and (min-width: 768px) {
     max-width: ${({ $isOpen }) => ($isOpen ? '450px' : 'auto')};
     margin-bottom: ${({ $isOpen }) => ($isOpen ? '52px' : '165px')};

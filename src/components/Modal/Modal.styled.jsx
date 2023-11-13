@@ -7,13 +7,14 @@ const ModalStyles = styled(motion.div)`
   left: 50%;
   z-index: 10000;
   overflow: hidden;
-  padding: 32px 24px;
+  padding: ${({ $isPopUp }) => ($isPopUp ? '0px' : '32px 24px')};
   background: var(--background-color-white);
   border-radius: 20px;
   .bg {
     position: absolute;
-    left: 118px;
-    bottom: 0;
+    // rework with new svg
+    left: ${({ $isPopUp }) => ($isPopUp ? '100px' : '118px')};
+    bottom: ${({ $isPopUp }) => ($isPopUp ? '-167px' : '0')};
     z-index: -1;
     width: 753px;
     height: 482px;
@@ -39,16 +40,16 @@ const ModalStyles = styled(motion.div)`
   }
 
   @media screen and (min-width: 1440px) {
-    padding-block: 80px;
-    min-width: 827px;
+    padding-block: ${({ $isPopUp }) => ($isPopUp ? '52' : '80px')}px;
+    min-width: ${({ $isPopUp }) => ($isPopUp ? 'auto' : '827px')};
     .bg {
       left: 294px;
       width: 533px;
       height: 499px;
     }
     .close {
-      top: 42px;
-      right: 54px;
+      top: ${({ $isPopUp }) => ($isPopUp ? '24' : '42')}px;
+      right: ${({ $isPopUp }) => ($isPopUp ? '30' : '54')}px;
     }
   }
 `;
@@ -81,7 +82,7 @@ export const Overlay = ({ children, handleClick, isNav = false }) => {
   );
 };
 
-const ModalPlaceholder = ({ children }) => (
+const ModalPlaceholder = ({ children, $isPopUp }) => (
   <ModalStyles
     initial={{ scale: 0.5, y: '-50%', x: '-50%' }}
     animate={{
@@ -91,6 +92,7 @@ const ModalPlaceholder = ({ children }) => (
       transition: { duration: 0.2 },
     }}
     exit={{ scale: 0 }}
+    $isPopUp={$isPopUp}
   >
     {children}
   </ModalStyles>

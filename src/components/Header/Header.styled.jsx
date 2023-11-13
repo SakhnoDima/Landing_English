@@ -8,12 +8,6 @@ const HeaderContainerStyles = styled(motion.div)`
   z-index: 998;
   width: 100%;
   background: var(--background-color-white);
-  @media screen and (min-width: 768px) {
-    max-width: ${breakpoints.tab}px;
-  }
-  @media screen and (min-width: 1440px) {
-    max-width: ${breakpoints.desk}px;
-  }
 `;
 
 export const HeaderContainer = ({ children }) => (
