@@ -71,6 +71,7 @@ export const HeroDescription = styled.p`
   @media screen and (min-width: 768px) {
     position: relative;
     background-color: inherit;
+    z-index: 1;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1339.9px) {
