@@ -29,7 +29,7 @@ export const InputWrap = styled.div`
   gap: 16px;
   width: 295px;
 
-  input[name='clientEmail'] {
+  input[name='email'] {
     ${({ $error }) =>
       $error === 'true' &&
       css`

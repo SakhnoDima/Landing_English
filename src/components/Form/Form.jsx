@@ -13,34 +13,29 @@ const Forma = () => {
   const validate = values => {
     const errors = {};
 
-    if (!emailRegexp.test(values.clientEmail)) {
-      errors.clientEmail = 'Invalid email';
+    if (!emailRegexp.test(values.email)) {
+      errors.email = 'Invalid email';
     }
 
     return errors;
   };
 
-  const handleSubmit = values => {
+  const handleSubmit = (values, { resetForm }) => {
     const client = {};
 
-    if (values.clientName) {
-      client.name = values.clientName;
-    }
-    if (values.clientEmail) {
-      client.email = values.clientEmail;
-    }
-    if (values.clientPhone) {
-      client.phone = values.clientPhone;
-    }
-    if (values.message) {
-      client.message = values.message;
-    }
+    const inputNames = ['name', 'email', 'phone', 'message'];
 
-    console.log(client);
+    inputNames.forEach(name => {
+      if (values[name]) {
+        client[name] = values[name];
+      }
+    });
+
     instance
       .post('/sendemail', { ...client })
       .then(response => {
         console.log('Form data sent:', response.data);
+        resetForm();
       })
       .catch(error => {
         console.error('Error submitting form:', error);
@@ -50,9 +45,9 @@ const Forma = () => {
   return (
     <Formik
       initialValues={{
-        clientName: '',
-        clientPhone: '',
-        clientEmail: '',
+        name: '',
+        phone: '',
+        email: '',
         message: '',
       }}
       validate={validate}
@@ -65,25 +60,23 @@ const Forma = () => {
           </Heading>
           <StyledForm as={Form}>
             <InputWrap
-              $error={
-                errors.clientEmail && touched.clientEmail ? 'true' : 'false'
-              }
+              $error={errors.email && touched.email ? 'true' : 'false'}
             >
               <Field
                 type="text"
-                name="clientName"
+                name="name"
                 placeholder="Enter Your name"
                 autoComplete="off"
               />
               <Field
                 type="text"
-                name="clientPhone"
+                name="phone"
                 placeholder="Enter Your phone"
                 autoComplete="off"
               />
               <Field
                 type="text"
-                name="clientEmail"
+                name="email"
                 placeholder="Enter Your email address"
                 autoComplete="off"
                 required
