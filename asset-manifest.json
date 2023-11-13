@@ -1,13 +1,16 @@
 {
   "files": {
     "main.css": "/Landing_English/static/css/main.732e4442.css",
-    "main.js": "/Landing_English/static/js/main.e84ee9c2.js",
-    "static/media/hero_bg.png": "/Landing_English/static/media/hero_bg.c687c161e2044a418dd4.png",
+    "main.js": "/Landing_English/static/js/main.e1a47cba.js",
+    "static/media/bg_ds@2x.png": "/Landing_English/static/media/bg_ds@2x.c7de3365e3570e58a94f.png",
+    "static/media/bg_mb@2x.png": "/Landing_English/static/media/bg_mb@2x.50391027bffaca19bf8a.png",
+    "static/media/bg_ds@1x.png": "/Landing_English/static/media/bg_ds@1x.c687c161e2044a418dd4.png",
     "static/media/backDesk.png": "/Landing_English/static/media/backDesk.f6a950ea0d6a60d01ba6.png",
     "static/media/backTab.png": "/Landing_English/static/media/backTab.b2fd7e260ba38b48c7da.png",
     "static/media/backMob.png": "/Landing_English/static/media/backMob.b82fcd14fbc55b8af2f4.png",
     "static/media/whyMe_desktop.png": "/Landing_English/static/media/whyMe_desktop.e445eb34d489e7c0797c.png",
     "static/media/Victoria.png": "/Landing_English/static/media/Victoria.e94256acb20fcf92ee4e.png",
+    "static/media/bg_mb@1x.png": "/Landing_English/static/media/bg_mb@1x.7456318aebfdab4416a4.png",
     "static/media/whyMe_tablet.png": "/Landing_English/static/media/whyMe_tablet.51d99d4c6ff9c97c91dc.png",
     "static/media/whyMe_mobile.png": "/Landing_English/static/media/whyMe_mobile.7aa0149ac6bc1c6a27f1.png",
     "static/media/form_svg.svg": "/Landing_English/static/media/form_svg.90037fb2372cc78caa7a8a49a8d17147.svg",
@@ -18,6 +21,7 @@
     "static/media/stress.svg": "/Landing_English/static/media/stress.a8ebd372f76875df2b43fc8f7dadcb29.svg",
     "static/media/notepad.svg": "/Landing_English/static/media/notepad.fa8f8c8e1215fe1e8f3b8cc820c51b19.svg",
     "static/media/default-male.svg": "/Landing_English/static/media/default-male.e7eb9621b54c9704e8c7f377000ab039.svg",
+    "static/media/form_sm_svg.svg": "/Landing_English/static/media/form_sm_svg.abd1048e3bedb6573bc0acd66935ec36.svg",
     "static/media/default-female.svg": "/Landing_English/static/media/default-female.83c55162a51163146bfffb990df213d0.svg",
     "static/media/intersactive.svg": "/Landing_English/static/media/intersactive.64d2b9d46cac67c29487eb8c2f34368c.svg",
     "static/media/certificate.svg": "/Landing_English/static/media/certificate.4973f5aa70f466c420d9c4c5a09e99a3.svg",
@@ -43,10 +47,10 @@
     "static/media/arrow-left.svg": "/Landing_English/static/media/arrow-left.d9ea8f698f40741eddfc6de4b84786a1.svg",
     "static/media/arrow-right.svg": "/Landing_English/static/media/arrow-right.4363a2108874a2ab834e9d98df721be1.svg",
     "main.732e4442.css.map": "/Landing_English/static/css/main.732e4442.css.map",
-    "main.e84ee9c2.js.map": "/Landing_English/static/js/main.e84ee9c2.js.map"
+    "main.e1a47cba.js.map": "/Landing_English/static/js/main.e1a47cba.js.map"
   },
   "entrypoints": [
     "static/css/main.732e4442.css",
-    "static/js/main.e84ee9c2.js"
+    "static/js/main.e1a47cba.js"
   ]
 }
