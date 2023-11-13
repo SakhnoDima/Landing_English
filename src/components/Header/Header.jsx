@@ -1,10 +1,10 @@
 import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 import { ReactComponent as Logo } from '../../images/svg/logo.svg';
 import { ReactComponent as BurgerMenu } from '../../images/svg/menu.svg';
-import HeaderComponent from './Header.styled';
+import HeaderComponent, { HeaderContainer } from './Header.styled';
 import Nav from '../NavMenu/NavMenu';
-import { AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,12 +19,14 @@ const Header = () => {
         {isOpen && <Nav toggleMenu={toggleNav} />}
       </AnimatePresence>
 
-      <HeaderComponent>
-        <a href="#hero">
-          <Logo className="logo" />
-        </a>
-        {!isOpen && <BurgerMenu onClick={toggleNav} className="menu" />}
-      </HeaderComponent>
+      <HeaderContainer>
+        <HeaderComponent>
+          <a href="#hero">
+            <Logo className="logo" />
+          </a>
+          {!isOpen && <BurgerMenu onClick={toggleNav} className="menu" />}
+        </HeaderComponent>
+      </HeaderContainer>
     </>
   );
 };

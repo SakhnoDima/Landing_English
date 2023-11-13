@@ -1,17 +1,39 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { breakpoints } from 'constants/constants';
 
-const HeaderStyles = styled(motion.header)`
+const HeaderContainerStyles = styled(motion.div)`
   position: fixed;
-  width: 100%;
   top: 0;
   z-index: 998;
+  width: 100%;
+  background: var(--background-color-white);
+  @media screen and (min-width: 768px) {
+    max-width: ${breakpoints.tab};
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: ${breakpoints.desk};
+  }
+`;
+
+export const HeaderContainer = ({ children }) => (
+  <HeaderContainerStyles
+    initial={{ y: -100, opacity: 0 }}
+    animate={{ y: 0, opacity: 1, transition: { duration: 0.5, delay: 1.2 } }}
+  >
+    {children}
+  </HeaderContainerStyles>
+);
+
+const HeaderComponent = styled.header`
+  max-width: ${breakpoints.mob}px;
+  margin: 0 auto;
   display: flex;
   justify-content: flex-end;
   padding-inline-end: 16px;
   padding-block-start: 48px;
   gap: 30px;
-  background: var(--background-color-white);
+
   .logo {
     width: 200px;
     height: 60px;
@@ -23,6 +45,7 @@ const HeaderStyles = styled(motion.header)`
   }
 
   @media screen and (min-width: 768px) {
+    max-width: ${breakpoints.tab}px;
     justify-content: space-between;
     align-items: center;
     padding: 24px 40px;
@@ -33,6 +56,7 @@ const HeaderStyles = styled(motion.header)`
   }
 
   @media screen and (min-width: 1440px) {
+    max-width: ${breakpoints.desk}px;
     padding: 36px 120px;
     .logo {
       width: 179px;
@@ -40,12 +64,5 @@ const HeaderStyles = styled(motion.header)`
     }
   }
 `;
-const HeaderComponent = ({ children }) => (
-  <HeaderStyles
-    initial={{ y: -100, opacity: 0 }}
-    animate={{ y: 0, opacity: 1, transition: { duration: 0.5, delay: 1.2 } }}
-  >
-    {children}
-  </HeaderStyles>
-);
+
 export default HeaderComponent;
