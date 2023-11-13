@@ -23,17 +23,17 @@ const Hero = () => {
       <HeroSection>
         <motion.p
           initial={{ y: 100 }}
-          animate={{ y: 0, transition: { duration: 0.7, delay: 1.2 } }}
+          animate={{ y: 0, transition: { duration: 0.7, delay: 2 } }}
           className="hero__title"
         >
           Hello there!
         </motion.p>
         <motion.h1
           initial={{ y: 100 }}
-          animate={{ y: 0, transition: { duration: 0.7, delay: 1.3 } }}
+          animate={{ y: 0, transition: { duration: 0.7, delay: 2.1 } }}
           className="hero__title"
         >
-          I'm Victoria, your Language Coach{' '}
+          I'm Victoria, your Language Coach
         </motion.h1>
         <DescWrapper $isOpen={isReadMore}>
           <motion.p className="hero__desc">
