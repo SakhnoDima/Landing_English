@@ -36,7 +36,8 @@ export const InputWrap = styled.div`
         background: rgba(255, 212, 212, 0.4);
         border: 1px solid #b83927;
       `};
-    &:focus {
+    &:focus,
+    &:valid {
       ~ span {
         color: transparent;
       }
