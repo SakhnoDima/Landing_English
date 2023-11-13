@@ -16,8 +16,6 @@ const ModalStyles = styled(motion.div)`
     left: ${({ $isPopUp }) => ($isPopUp ? '100px' : '118px')};
     bottom: ${({ $isPopUp }) => ($isPopUp ? '-167px' : '0')};
     z-index: -1;
-    width: 753px;
-    height: 482px;
   }
   .close {
     position: absolute;
@@ -43,9 +41,9 @@ const ModalStyles = styled(motion.div)`
     padding-block: ${({ $isPopUp }) => ($isPopUp ? '52' : '80px')}px;
     min-width: ${({ $isPopUp }) => ($isPopUp ? 'auto' : '827px')};
     .bg {
-      left: 294px;
-      width: 533px;
-      height: 499px;
+      ${({ $isPopUp }) => ($isPopUp ? 'right: 0' : 'left: 294px')};
+      width: ${({ $isPopUp }) => ($isPopUp ? 'auto' : '533px')};
+      height: ${({ $isPopUp }) => ($isPopUp ? 'auto' : '499px')};
     }
     .close {
       top: ${({ $isPopUp }) => ($isPopUp ? '24' : '42')}px;

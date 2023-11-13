@@ -1,8 +1,10 @@
 import { createPortal } from 'react-dom';
 import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
-import { ReactComponent as SvgBg } from '../../images/svg/form_svg.svg';
-import { ReactComponent as Close } from '../../images/svg/x.svg';
+import { ReactComponent as SvgBgLg } from 'images/svg/form_svg.svg';
+import { ReactComponent as SvgBgSm } from 'images/svg/form_sm_svg.svg';
+import { ReactComponent as Close } from 'images/svg/x.svg';
 
 import ModalPlaceholder, { Overlay } from './Modal.styled';
 import Form from '../Form/Form';
@@ -12,6 +14,7 @@ import PopUp from 'components/PopUp/PopUp';
 const ModalPortal = () => {
   const { closeModal } = useModal();
   const [isSubmitted, setSubmitted] = useState(false);
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   useEffect(() => {
     document.documentElement.style.overflowY = 'hidden';
@@ -34,7 +37,11 @@ const ModalPortal = () => {
           <Form setSubmitted={() => setSubmitted(true)} />
         )}
         <Close className="close" onClick={closeModal} />
-        <SvgBg className='bg' />
+        {isDesktop && !isSubmitted ? (
+          <SvgBgLg className="bg" />
+        ) : (
+          <SvgBgSm className="bg" />
+        )}
       </ModalPlaceholder>
     </Overlay>,
     document.body
