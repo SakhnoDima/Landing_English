@@ -42,7 +42,9 @@ const ModalStyles = styled(motion.div)`
     padding-block: 80px;
     min-width: 827px;
     .bg {
-      left: 298px;
+      left: 294px;
+      width: 533px;
+      height: 499px;
     }
     .close {
       top: 42px;
