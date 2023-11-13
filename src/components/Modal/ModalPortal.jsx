@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { ReactComponent as SvgBg } from '../../images/svg/form_svg.svg';
 import { ReactComponent as Close } from '../../images/svg/x.svg';
@@ -7,9 +7,11 @@ import { ReactComponent as Close } from '../../images/svg/x.svg';
 import ModalPlaceholder, { Overlay } from './Modal.styled';
 import Form from '../Form/Form';
 import { useModal } from 'hooks/ModalContext';
+import PopUp from 'components/PopUp/PopUp';
 
 const ModalPortal = () => {
   const { closeModal } = useModal();
+  const [isSubmitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     document.documentElement.style.overflowY = 'hidden';
@@ -25,10 +27,14 @@ const ModalPortal = () => {
 
   return createPortal(
     <Overlay handleClick={closeModal}>
-      <ModalPlaceholder>
-        <Form />
+      <ModalPlaceholder $isPopUp={isSubmitted}>
+        {isSubmitted ? (
+          <PopUp />
+        ) : (
+          <Form setSubmitted={() => setSubmitted(true)} />
+        )}
         <Close className="close" onClick={closeModal} />
-        <SvgBg className="bg" />
+        <SvgBg className='bg' />
       </ModalPlaceholder>
     </Overlay>,
     document.body

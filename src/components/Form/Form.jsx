@@ -7,7 +7,7 @@ export const instance = axios.create({
   baseURL: 'https://landing-english.onrender.com/api',
 });
 
-const Forma = () => {
+const Forma = ({ setSubmitted }) => {
   const emailRegexp = /^\w+([/.-]?\w+)*@\w+([/.-]?\w+)*(\.\w{2,3})+$/;
 
   const validate = values => {
@@ -36,6 +36,7 @@ const Forma = () => {
       .then(response => {
         console.log('Form data sent:', response.data);
         resetForm();
+        setSubmitted();
       })
       .catch(error => {
         console.error('Error submitting form:', error);
