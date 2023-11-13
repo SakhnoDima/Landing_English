@@ -61,7 +61,7 @@ export const howItWorks = [
   },
 ];
 
-export const titleAnimation = {
+const titleAnimation = {
   initial: {
     y: 150,
     opacity: 0.3,
@@ -73,6 +73,13 @@ export const titleAnimation = {
       duration: 0.7,
     },
   },
+};
+
+export const titleAnimationConfig = {
+  variants: titleAnimation,
+  initial: 'initial',
+  whileInView: 'animate',
+  viewport: { once: true },
 };
 
 export const defaultAnimation = {

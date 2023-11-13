@@ -5,7 +5,7 @@ import { ReactComponent as Stress } from 'images/svg/stress.svg';
 import { ReactComponent as Motivation } from 'images/svg/motivation.svg';
 import { ReactComponent as Intersactive } from 'images/svg/intersactive.svg';
 import { ReactComponent as Cooperation } from 'images/svg/cooperation.svg';
-import { titleAnimation, animationSettings } from 'constants/constants';
+import { animationSettings, titleAnimationConfig } from 'constants/constants';
 
 export const TitleStyles = styled(motion.h2)`
   font-size: 28px;
@@ -20,16 +20,7 @@ export const TitleStyles = styled(motion.h2)`
 `;
 
 export const Title = ({ children }) => {
-  return (
-    <TitleStyles
-      variants={titleAnimation}
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
-    >
-      {children}
-    </TitleStyles>
-  );
+  return <TitleStyles {...titleAnimationConfig}>{children}</TitleStyles>;
 };
 
 export const WrapperContainerAll = styled.div`
@@ -78,13 +69,11 @@ const WrapperContainerStyles = styled(motion.div)`
   }
 `;
 
-export const WrapperContainer = ({ children, idx }) => {
-  return (
-    <WrapperContainerStyles custom={idx} {...animationSettings}>
-      {children}
-    </WrapperContainerStyles>
-  );
-};
+export const WrapperContainer = ({ children, idx }) => (
+  <WrapperContainerStyles custom={idx} {...animationSettings}>
+    {children}
+  </WrapperContainerStyles>
+);
 
 export const StressIcon = styled(Stress)`
   width: 70px;

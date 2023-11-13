@@ -52,6 +52,12 @@ const PriceCardsList = () => {
     }
   };
 
+  const CardHeight = () => {
+    const conditionResult = window.innerWidth >= 1440 ? '433px' : '411px';
+
+    return conditionResult;
+  };
+
   return (
     <StyledWrap id="myService">
       <Chat />
@@ -63,7 +69,9 @@ const PriceCardsList = () => {
             <Flipped flipId="specificGoal">
               <StyledCard
                 className="StyledCard div1"
-                $condition={showDetails.specificGoal}
+                style={{
+                  height: showDetails.specificGoal ? CardHeight() : '114px',
+                }}
               >
                 <h2>Do you have a specific goal? </h2>
                 {showDetails.specificGoal && (
@@ -111,7 +119,9 @@ const PriceCardsList = () => {
             <Flipped flipId="lazyStart">
               <StyledCard
                 className="StyledCard div2"
-                $condition={showDetails.lazyStart}
+                style={{
+                  height: showDetails.lazyStart ? CardHeight() : '114px',
+                }}
               >
                 <h2>Lazy to get started?</h2>
                 {showDetails.lazyStart && (
@@ -157,7 +167,9 @@ const PriceCardsList = () => {
             <Flipped flipId="tiredLessons">
               <StyledCard
                 className="StyledCard div3"
-                $condition={showDetails.tiredLessons}
+                style={{
+                  height: showDetails.tiredLessons ? CardHeight() : '114px',
+                }}
               >
                 <h2>Tired of "lessons"?</h2>
                 {showDetails.tiredLessons && (
@@ -203,7 +215,9 @@ const PriceCardsList = () => {
             <Flipped flipId="maternityLeave">
               <StyledCard
                 className="StyledCard div4"
-                $condition={showDetails.maternityLeave}
+                style={{
+                  height: showDetails.maternityLeave ? CardHeight() : '114px',
+                }}
               >
                 <h2>Are you a mum on maternity leave?</h2>
                 {showDetails.maternityLeave && (

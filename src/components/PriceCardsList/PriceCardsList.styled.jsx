@@ -14,8 +14,8 @@ export const StyledWrap = styled.section`
   padding: 60px 0;
   scroll-margin-block-start: 80px;
   background: url(${mobBack});
-  background-size: 'cover';
-  background-position: 'center';
+  background-size: cover;
+  background-position: center;
 
   @media screen and (min-width: 768px) {
     padding: 80px 0 35px 0;
@@ -78,7 +78,6 @@ export const StyledList = styled.ul`
 `;
 
 export const StyledCard = styled.li`
-  height: ${({ $condition }) => ($condition ? '411px' : '114px')};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -140,7 +139,6 @@ export const StyledCard = styled.li`
     }
   }
   @media screen and (min-width: 1440px) {
-    height: ${({ $condition }) => ($condition ? '433px' : '114px')};
     h2 {
       font-size: 20px;
     }

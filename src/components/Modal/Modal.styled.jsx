@@ -6,7 +6,6 @@ const ModalStyles = styled(motion.div)`
   top: 50%;
   left: 50%;
   z-index: 10000;
-  transform: translate(-50%, -50%);
   overflow: hidden;
   padding: 32px 24px;
   background: var(--background-color-white);
@@ -43,7 +42,9 @@ const ModalStyles = styled(motion.div)`
     padding-block: 80px;
     min-width: 827px;
     .bg {
-      left: 298px;
+      left: 294px;
+      width: 533px;
+      height: 499px;
     }
     .close {
       top: 42px;
@@ -79,7 +80,18 @@ export const Overlay = ({ children, handleClick }) => {
 };
 
 const ModalPlaceholder = ({ children }) => (
-  <ModalStyles>{children}</ModalStyles>
+  <ModalStyles
+    initial={{ scale: 0.5, y: '-50%', x: '-50%' }}
+    animate={{
+      y: '-50%',
+      x: '-50%',
+      scale: 1,
+      transition: { duration: 0.2 },
+    }}
+    exit={{ scale: 0 }}
+  >
+    {children}
+  </ModalStyles>
 );
 
 export default ModalPlaceholder;
