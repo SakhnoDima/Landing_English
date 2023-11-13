@@ -78,7 +78,7 @@ export const HeroDescription = styled.p`
   @media screen and (min-width: 768px) and (max-width: 1339.9px) {
     max-width: 429px;
   }
-  @media screen and (min-width: 1440) {
+  @media screen and (min-width: 1440px) {
     font-size: 16px;
   }
 `;
