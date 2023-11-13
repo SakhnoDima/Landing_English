@@ -29,7 +29,7 @@ const Forma = () => {
     };
 
     instance
-      .post('/sendemail', client)
+      .post('/sendemail', { ...client })
       .then(response => {
         console.log('Form data sent:', response.data);
       })
