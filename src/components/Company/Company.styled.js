@@ -59,3 +59,11 @@ export const CompanyWrapper = ({ children }) => (
     {children}
   </CompanyWrapperStyles>
 );
+
+export const WrapperContainer = ({ children, idx }) => {
+  return (
+    <motion.div custom={idx} {...animationSettings}>
+      {children}
+    </motion.div>
+  );
+};

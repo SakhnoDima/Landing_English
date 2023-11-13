@@ -3,7 +3,12 @@ import { StyledButton } from './Button.styled';
 
 const Button = ({ $type, $size, children, handleClick }) => {
   return (
-    <StyledButton $type={$type} $width={$size} onClick={handleClick}>
+    <StyledButton
+      type="submit"
+      $type={$type}
+      $width={$size}
+      onClick={handleClick}
+    >
       {children}
     </StyledButton>
   );

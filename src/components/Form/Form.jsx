@@ -51,7 +51,9 @@ const Forma = () => {
     >
       {({ errors, touched }) => (
         <FormWrapper>
-          <Heading>How can I help you to improve your English?</Heading>
+          <Heading>
+            How can I help you <br /> to improve your English?
+          </Heading>
           <StyledForm as={Form}>
             <InputWrap
               $error={
