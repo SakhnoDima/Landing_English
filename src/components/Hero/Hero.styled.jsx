@@ -57,7 +57,7 @@ const Hero = styled(motion.section)`
 `;
 
 export const HeroDescription = styled.p`
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0em;
@@ -69,6 +69,7 @@ export const HeroDescription = styled.p`
     font-weight: 500;
   }
   @media screen and (min-width: 768px) {
+    font-size: 14px;
     position: relative;
     background-color: inherit;
     z-index: 1;
@@ -76,6 +77,9 @@ export const HeroDescription = styled.p`
 
   @media screen and (min-width: 768px) and (max-width: 1339.9px) {
     max-width: 429px;
+  }
+  @media screen and (min-width: 1440) {
+    font-size: 16px;
   }
 `;
 
@@ -112,7 +116,7 @@ export const ReadMoreBtn = styled.button`
 export const CloseTextBtn = styled.button`
   position: absolute;
   right: 0;
-  bottom: -195px;
+  bottom: -265px;
   display: flex;
   align-items: center;
   padding: 0;
