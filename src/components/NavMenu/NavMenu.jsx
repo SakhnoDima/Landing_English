@@ -7,10 +7,6 @@ import { sectionLinks } from 'constants/constants';
 const Nav = ({ toggleMenu, isVisible }) => {
   const [activeLink, setActiveLink] = useState('');
 
-  const handleBackdropClick = e => {
-    if (e.target === e.currentTarget) toggleMenu();
-  };
-
   const handleChangeActiveLink = keyEvent => {
     const activeIndex = sectionLinks.findIndex(el => el.link === activeLink);
     if (!activeLink) {
@@ -64,7 +60,7 @@ const Nav = ({ toggleMenu, isVisible }) => {
   });
 
   return (
-    <NavMenu onBackdropClick={handleBackdropClick} isVisible={isVisible}>
+    <NavMenu isVisible={isVisible}>
       <Close onClick={toggleMenu} className="close-btn" />
       <NavStyles>
         <UlComponent>

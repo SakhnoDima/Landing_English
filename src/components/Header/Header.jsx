@@ -5,6 +5,7 @@ import { ReactComponent as Logo } from '../../images/svg/logo.svg';
 import { ReactComponent as BurgerMenu } from '../../images/svg/menu.svg';
 import HeaderComponent, { HeaderContainer } from './Header.styled';
 import Nav from '../NavMenu/NavMenu';
+import { Overlay } from 'components/Modal/Modal.styled';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,11 @@ const Header = () => {
   return (
     <>
       <AnimatePresence>
-        {isOpen && <Nav toggleMenu={toggleNav} />}
+        {isOpen && (
+          <Overlay isNav={true} handleClick={toggleNav}>
+            <Nav toggleMenu={toggleNav} />
+          </Overlay>
+        )}
       </AnimatePresence>
 
       <HeaderContainer>

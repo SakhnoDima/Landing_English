@@ -20,6 +20,8 @@ const Nav = styled(motion.div)`
   }
 
   @media screen and (min-width: 768px) {
+    background: rgba(255, 254, 251, 0.949);
+    backdrop-filter: blur(1.5px);
     .close-btn {
       top: 24px;
       right: 40px;
@@ -27,6 +29,7 @@ const Nav = styled(motion.div)`
   }
 
   @media screen and (min-width: 1440px) {
+    background-color: var(--background-color-white);
     width: calc(100vw - 52%);
     opacity: 0.95;
     .close-btn {
@@ -81,10 +84,9 @@ export const UlComponent = styled.ul`
   }
 `;
 
-const NavMenu = ({ children, onBackdropClick }) => {
+const NavMenu = ({ children }) => {
   return (
     <Nav
-      onClick={e => onBackdropClick(e)}
       initial={{ x: '100%' }}
       animate={{ x: 0 }}
       transition={{ type: 'just' }}

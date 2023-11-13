@@ -63,7 +63,7 @@ export const HeroDescription = styled.p`
   line-height: normal;
   text-align: left;
   position: absolute;
-  z-index: 11111;
+  z-index: 1;
   background-color: var(--white);
   span {
     font-weight: 500;
@@ -130,7 +130,7 @@ export const CloseTextBtn = styled.button`
   letter-spacing: 0em;
   text-align: left;
   color: #466eb6;
-  z-index: 11111;
+  z-index: 1;
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -142,7 +142,7 @@ export const HeroSection = ({ children }) => {
     <Hero
       id="hero"
       initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1, transition: { duration: 0.7, delay: 1.2 } }}
+      animate={{ y: 0, opacity: 1, transition: { duration: 0.7, delay: 2 } }}
     >
       {children}
     </Hero>
