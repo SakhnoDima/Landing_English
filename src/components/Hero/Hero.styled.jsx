@@ -1,14 +1,20 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-import heroBg from '../../images/hero_bg.png';
+import heroBgMob_1 from '../../images/hero/bg_mb@1x.png';
+import heroBgMob_2 from '../../images/hero/bg_mb@2x.png';
+import heroBgTab_1 from '../../images/hero/bg_ds@1x.png';
+import heroBgTab_2 from '../../images/hero/bg_ds@2x.png';
+import heroBgDes_1 from '../../images/hero/bg_ds@1x.png';
+import heroBgDes_2 from '../../images/hero/bg_ds@2x.png';
 
 const Hero = styled(motion.section)`
   position: relative;
   padding: 38px 0 60px;
   margin-top: 112px;
   scroll-margin-top: 112px;
-  background: no-repeat url(${heroBg});
+  background: url(${heroBgMob_1});
+  background-repeat: no-repeat;
   background-size: cover;
   .hero__title {
     font-size: 32px;
@@ -26,10 +32,18 @@ const Hero = styled(motion.section)`
     text-align: left;
   }
 
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background: url(${heroBgMob_2});
+  }
+
   @media screen and (min-width: 768px) {
     padding: 53px 0 80px;
     margin-right: -40px;
     margin-top: 93px;
+    background: url(${heroBgTab_1});
     .hero__title {
       line-height: 45px;
     }
@@ -37,12 +51,19 @@ const Hero = styled(motion.section)`
       margin-top: 8px;
       font-size: 16px;
     }
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background: url(${heroBgTab_2});
+    }
   }
 
   @media screen and (min-width: 1440px) {
     padding: 120px 0px;
     margin-right: 0px;
     margin-top: 125px;
+    background: url(${heroBgDes_1});
     .hero__title {
       font-size: 40px;
       font-weight: 500;
@@ -52,6 +73,12 @@ const Hero = styled(motion.section)`
       margin-top: 16px;
       font-size: 18px;
       line-height: 34px;
+    }
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background: url(${heroBgDes_2});
     }
   }
 `;
