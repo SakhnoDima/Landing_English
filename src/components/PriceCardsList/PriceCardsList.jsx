@@ -60,8 +60,8 @@ const PriceCardsList = () => {
 
   return (
     <StyledWrap id="myService">
-      <Chat />
       <Container>
+        <Chat />
         <Flipper
           flipKey={`${showDetails.specificGoal}${showDetails.lazyStart}${showDetails.tiredLessons}${showDetails.maternityLeave}`}
         >
