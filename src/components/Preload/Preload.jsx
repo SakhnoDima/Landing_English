@@ -25,7 +25,7 @@ const logo = {
     opacity: 0,
     transition: {
       delay: 0.5,
-      duration: 3,
+      duration: 2.5,
     },
   },
 };
@@ -36,7 +36,7 @@ const Preload = () => {
   useEffect(() => {
     setTimeout(() => {
       ref.current.style.display = 'none';
-    }, 3000);
+    }, 2500);
   });
 
   return (

@@ -20,7 +20,6 @@ const Nav = styled(motion.div)`
   }
 
   @media screen and (min-width: 768px) {
-    width: calc(100vw - 52%);
     .close-btn {
       top: 24px;
       right: 40px;
@@ -28,6 +27,7 @@ const Nav = styled(motion.div)`
   }
 
   @media screen and (min-width: 1440px) {
+    width: calc(100vw - 52%);
     opacity: 0.95;
     .close-btn {
       width: 32px;
