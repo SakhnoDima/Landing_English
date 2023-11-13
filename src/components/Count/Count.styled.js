@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { ReactComponent as ArrowFlexble } from 'images/svg/arrow.svg';
-import { animationSettings, titleAnimation } from 'constants/constants';
+import { animationSettings, titleAnimationConfig } from 'constants/constants';
 
 export const Wrapper = styled.section`
   background-color: var(--background-white);
@@ -31,18 +31,9 @@ const TitleStyles = styled(motion.h2)`
   }
 `;
 
-export const Title = ({ children }) => {
-  return (
-    <TitleStyles
-      variants={titleAnimation}
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
-    >
-      {children}
-    </TitleStyles>
-  );
-};
+export const Title = ({ children }) => (
+  <TitleStyles {...titleAnimationConfig}>{children}</TitleStyles>
+);
 
 export const CountWrapper = styled.div`
   display: flex;
@@ -166,11 +157,7 @@ const ItemWrapperStyles = styled(motion.div)`
 
 export const ItemWrapper = ({ children }) => {
   return (
-    <ItemWrapperStyles
-      {...animationSettings}
-    >
-      {children}
-    </ItemWrapperStyles>
+    <ItemWrapperStyles {...animationSettings}>{children}</ItemWrapperStyles>
   );
 };
 

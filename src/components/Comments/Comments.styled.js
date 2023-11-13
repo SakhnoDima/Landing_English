@@ -6,7 +6,7 @@ import { ReactComponent as ArrowRight } from 'images/svg/arrow-right.svg';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { titleAnimation } from 'constants/constants';
+import { titleAnimationConfig } from 'constants/constants';
 
 export const WrapperBackground = styled.section`
   background-color: var(--background-color-white);
@@ -33,18 +33,9 @@ const TitleStyles = styled(motion.h2)`
   }
 `;
 
-export const Title = ({ children }) => {
-  return (
-    <TitleStyles
-      variants={titleAnimation}
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
-    >
-      {children}
-    </TitleStyles>
-  );
-};
+export const Title = ({ children }) => (
+  <TitleStyles {...titleAnimationConfig}>{children}</TitleStyles>
+);
 
 export const WrapperMain = styled.div`
   position: relative;
