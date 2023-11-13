@@ -63,7 +63,7 @@ export const HeroDescription = styled.p`
   letter-spacing: 0em;
   text-align: left;
   position: absolute;
-  z-index: 11111;
+  z-index: 1;
   background-color: var(--white);
   span {
     font-weight: 500;
@@ -128,7 +128,7 @@ export const CloseTextBtn = styled.button`
   letter-spacing: 0em;
   text-align: left;
   color: #466eb6;
-  z-index: 11111;
+  z-index: 1;
 
   @media screen and (min-width: 768px) {
     display: none;

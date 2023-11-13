@@ -1,5 +1,5 @@
-const { motion } = require('framer-motion');
-const { default: styled } = require('styled-components');
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
 const ModalStyles = styled(motion.div)`
   position: absolute;
@@ -60,10 +60,11 @@ const OverlayStyles = styled(motion.div)`
   top: 0;
   left: 0;
   z-index: 9999;
-  background: rgba(112, 112, 112, 0.5);
+  background: ${({ $isNav }) =>
+    $isNav ? 'transparent' : 'rgba(112, 112, 112, 0.5)'};
 `;
 
-export const Overlay = ({ children, handleClick }) => {
+export const Overlay = ({ children, handleClick, isNav = false }) => {
   const handleBackdropClick = e =>
     e.target === e.currentTarget ? handleClick() : null;
 
@@ -73,6 +74,7 @@ export const Overlay = ({ children, handleClick }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2 }}
       onClick={handleBackdropClick}
+      $isNav={isNav}
     >
       {children}
     </OverlayStyles>
