@@ -12,14 +12,16 @@ import allegro from 'images/allegro.png';
 
 const Company = () => {
   const companyList = [
-    <CompanyRengier idx={0} src={rengier} alt="rengier axel springer" />,
-    <CompanyAllegro idx={1} src={allegro} alt="allegro" />,
-    <CompanyEteria idx={2} src={eteria} alt="Eteria Consulting" />,
+    <CompanyRengier src={rengier} alt="rengier axel springer" />,
+    <CompanyAllegro src={allegro} alt="allegro" />,
+    <CompanyEteria src={eteria} alt="Eteria Consulting" />,
   ];
   return (
     <CompanyWrapper id="clients">
       {companyList.map((el, idx) => (
-        <WrapperContainer idx={idx}>{el}</WrapperContainer>
+        <WrapperContainer key={idx} idx={idx}>
+          {el}
+        </WrapperContainer>
       ))}
     </CompanyWrapper>
   );
