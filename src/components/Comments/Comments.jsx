@@ -66,7 +66,7 @@ const Comments = () => {
   };
 
   const settings = {
-    initialSlide: commentIndex,
+    // initialSlide: commentIndex,
     infinity: true,
     lazyLoading: true,
     speed: 300,
@@ -95,9 +95,7 @@ const Comments = () => {
     <WrapperBackground id="whatMyClientsSay">
       <Container>
         <Title>What my clients say...</Title>
-        <motion.div
-          {...animationSettings}
-        >
+        <motion.div {...animationSettings}>
           <Slider {...settings} key={windowWidth}>
             {commentsBlocks.map(({ img, name, profession, text }, idx) => {
               const isActive = idx === activeSlide;
