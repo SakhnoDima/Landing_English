@@ -21,13 +21,22 @@ const Forma = () => {
   };
 
   const handleSubmit = values => {
-    const client = {
-      name: values.clientName,
-      email: values.clientEmail,
-      phone: values.clientPhone,
-      message: values.message,
-    };
+    const client = {};
 
+    if (values.clientName) {
+      client.name = values.clientName;
+    }
+    if (values.clientEmail) {
+      client.email = values.clientEmail;
+    }
+    if (values.clientPhone) {
+      client.phone = values.clientPhone;
+    }
+    if (values.message) {
+      client.message = values.message;
+    }
+
+    console.log(client);
     instance
       .post('/sendemail', { ...client })
       .then(response => {
