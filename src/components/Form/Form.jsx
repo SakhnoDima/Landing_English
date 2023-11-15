@@ -1,11 +1,9 @@
 import { Formik, Form, Field } from 'formik';
-import axios from 'axios';
+
 import { FormWrapper, Heading, InputWrap, StyledForm } from './Form.styled';
 import Button from 'components/Button/Button';
 
-export const instance = axios.create({
-  baseURL: 'https://landing-english.onrender.com/api',
-});
+import { instance } from '../../helpers/axios';
 
 const Forma = ({ setSubmitted }) => {
   const emailRegexp = /^\w+([/.-]?\w+)*@\w+([/.-]?\w+)*(\.\w{2,3})+$/;
@@ -33,8 +31,7 @@ const Forma = ({ setSubmitted }) => {
 
     instance
       .post('/sendemail', { ...client })
-      .then(response => {
-        console.log('Form data sent:', response.data);
+      .then(() => {
         resetForm();
         setSubmitted();
       })

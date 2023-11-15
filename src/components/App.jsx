@@ -7,8 +7,16 @@ import Hero from './Hero/Hero';
 import Preload from './Preload/Preload';
 import WhyMe from './WhyMe/WhyMe';
 import { Modal } from './Modal/Modal';
+import { instance } from 'helpers/axios';
+import { useEffect } from 'react';
 
 export const App = () => {
+  useEffect(() => {
+    instance.get('/sendemail').catch(error => {
+      console.error();
+    });
+  }, []);
+
   return (
     <ModalProvider>
       <Modal />
