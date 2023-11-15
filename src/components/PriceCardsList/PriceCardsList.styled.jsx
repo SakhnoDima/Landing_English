@@ -34,7 +34,7 @@ export const StyledList = styled.ul`
   width: 343px;
   margin: 0 auto;
   li {
-    transition: transform 0.3s;
+    transition: 0.8s;
   }
 
   @media screen and (min-width: 768px) {
@@ -72,7 +72,7 @@ export const StyledList = styled.ul`
     height: 433px;
 
     li {
-      transition: transform 0.3s;
+      transition: 0.8s;
     }
   }
 `;
@@ -135,8 +135,6 @@ export const StyledCard = styled.li`
       font-size: 18px;
       margin-bottom: 2px;
     }
-    &.active {
-    }
   }
   @media screen and (min-width: 1440px) {
     h2 {
@@ -160,7 +158,7 @@ export const StyledCard = styled.li`
     }
 
     &:last-child {
-      padding-top: 45px;
+      padding-top: 34px;
       h2 {
         margin-bottom: 0;
       }
