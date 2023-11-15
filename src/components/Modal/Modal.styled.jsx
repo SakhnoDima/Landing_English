@@ -12,7 +12,6 @@ const ModalStyles = styled(motion.div)`
   border-radius: 20px;
   .bg {
     position: absolute;
-    // rework with new svg
     left: ${({ $isPopUp }) => ($isPopUp ? '100px' : '118px')};
     bottom: ${({ $isPopUp }) => ($isPopUp ? '-167px' : '0')};
     z-index: -1;
@@ -61,6 +60,10 @@ const OverlayStyles = styled(motion.div)`
   z-index: 9999;
   background: ${({ $isNav }) =>
     $isNav ? 'transparent' : 'rgba(112, 112, 112, 0.5)'};
+
+  @media screen and (orientation: landscape) {
+    overflow-y: scroll;
+  }
 `;
 
 export const Overlay = ({ children, handleClick, isNav = false }) => {

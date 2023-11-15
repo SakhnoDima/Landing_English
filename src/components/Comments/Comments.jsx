@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
-
+import { useMediaQuery } from 'react-responsive';
 import LinesEllipsis from 'react-lines-ellipsis';
 
 import commentsBlocks from './commentsBlock';
@@ -26,28 +26,16 @@ import Container from 'components/Container/Container';
 import { animationSettings } from 'constants/constants';
 
 const Comments = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const [isExpanded, setIsExpanded] = useState({});
   // const [commentIndex, setCommentIndex] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [windowWidth]);
-
-  const maxLines = windowWidth < 768 ? '11' : '7';
-  const width =
-    windowWidth < 768 ? '328px' : windowWidth < 1440 ? '451px' : '387px';
-
-  const isTablet = window.innerWidth >= 768;
-  const isDesktop = window.innerWidth >= 1440;
+  const maxLines = !isTablet && !isDesktop < 768 ? '11' : '7';
+  const width = `${
+    !isTablet && !isDesktop ? '328' : isTablet && !isDesktop ? '451' : '387'
+  }px`;
 
   const NextArrow = ({ onClick }) => {
     return (
@@ -96,7 +84,7 @@ const Comments = () => {
       <Container>
         <Title>What my clients say...</Title>
         <motion.div {...animationSettings}>
-          <Slider {...settings} key={windowWidth}>
+          <Slider {...settings}>
             {commentsBlocks.map(({ img, name, profession, text }, idx) => {
               const isActive = idx === activeSlide;
               const expanded = isExpanded[idx];
