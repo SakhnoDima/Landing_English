@@ -71,6 +71,7 @@ const PriceCardsList = () => {
                 className="StyledCard div1"
                 style={{
                   height: showDetails.specificGoal ? CardHeight() : '114px',
+                  overflow: 'hidden',
                 }}
               >
                 <h2>Do you have a specific goal? </h2>
@@ -121,6 +122,7 @@ const PriceCardsList = () => {
                 className="StyledCard div2"
                 style={{
                   height: showDetails.lazyStart ? CardHeight() : '114px',
+                  overflow: 'hidden',
                 }}
               >
                 <h2>Lazy to get started?</h2>
@@ -169,6 +171,7 @@ const PriceCardsList = () => {
                 className="StyledCard div3"
                 style={{
                   height: showDetails.tiredLessons ? CardHeight() : '114px',
+                  overflow: 'hidden',
                 }}
               >
                 <h2>Tired of "lessons"?</h2>
@@ -217,6 +220,7 @@ const PriceCardsList = () => {
                 className="StyledCard div4"
                 style={{
                   height: showDetails.maternityLeave ? CardHeight() : '114px',
+                  overflow: 'hidden',
                 }}
               >
                 <h2>Are you a mum on maternity leave?</h2>
