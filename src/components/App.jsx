@@ -12,7 +12,7 @@ import { useLayoutEffect } from 'react';
 
 export const App = () => {
   useLayoutEffect(() => {
-    instance.get('/sendemail').catch(error => {
+    instance.get('/wakeup').catch(error => {
       console.error();
     });
   }, []);
