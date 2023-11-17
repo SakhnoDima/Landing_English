@@ -1,4 +1,5 @@
 import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
 
 import { FormWrapper, Heading, InputWrap, StyledForm } from './Form.styled';
 import Button from 'components/Button/Button';
@@ -8,15 +9,18 @@ import { instance } from '../../helpers/axios';
 const Forma = ({ setSubmitted }) => {
   const emailRegexp = /^\w+([/.-]?\w+)*@\w+([/.-]?\w+)*(\.\w{2,3})+$/;
 
-  const validate = values => {
-    const errors = {};
+  const SignupSchema = Yup.object().shape({
+    name: Yup.string(),
 
-    if (!emailRegexp.test(values.email)) {
-      errors.email = 'Invalid email';
-    }
+    phone: Yup.number('Should be number'),
 
-    return errors;
-  };
+    email: Yup.string()
+      .email('Invalid email')
+      .matches(emailRegexp)
+      .required('Required'),
+
+    message: Yup.string(),
+  });
 
   const handleSubmit = (values, { resetForm }) => {
     const client = {};
@@ -48,7 +52,7 @@ const Forma = ({ setSubmitted }) => {
         email: '',
         message: '',
       }}
-      validate={validate}
+      validationSchema={SignupSchema}
       onSubmit={handleSubmit}
     >
       {({ errors, touched }) => (
@@ -59,6 +63,7 @@ const Forma = ({ setSubmitted }) => {
           <StyledForm as={Form}>
             <InputWrap
               $error={errors.email && touched.email ? 'true' : 'false'}
+              $phoneError={errors.phone ? 'true' : 'false'}
             >
               <Field
                 type="text"

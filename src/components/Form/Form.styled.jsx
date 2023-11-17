@@ -29,6 +29,32 @@ export const InputWrap = styled.div`
   gap: 16px;
   width: 295px;
 
+  input[name='phone'] {
+    ${({ $phoneError }) =>
+      $phoneError === 'true' &&
+      css`
+        background: rgba(255, 212, 212, 0.4);
+        border: 1px solid #b83927;
+        animation: shake 0.5s alternate;
+
+        @keyframes shake {
+          0%,
+          100% {
+            transform: translateX(0);
+          }
+          20%,
+          50%,
+          80% {
+            transform: translateX(-10px);
+          }
+          40%,
+          60% {
+            transform: translateX(10px);
+          }
+        }
+      `};
+  }
+
   input[name='email'] {
     ${({ $error }) =>
       $error === 'true' &&
