@@ -5,14 +5,13 @@ import { FormWrapper, Heading, InputWrap, StyledForm } from './Form.styled';
 import Button from 'components/Button/Button';
 
 import { instance } from '../../helpers/axios';
+import { emailRegexp, phoneRegExp } from 'constants/constants';
 
 const Forma = ({ setSubmitted }) => {
-  const emailRegexp = /^\w+([/.-]?\w+)*@\w+([/.-]?\w+)*(\.\w{2,3})+$/;
-
   const SignupSchema = Yup.object().shape({
     name: Yup.string(),
 
-    phone: Yup.number('Should be number'),
+    phone: Yup.string().matches(phoneRegExp),
 
     email: Yup.string()
       .email('Invalid email')

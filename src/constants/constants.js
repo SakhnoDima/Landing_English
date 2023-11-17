@@ -1,3 +1,6 @@
+export const emailRegexp = /^\w+([/.-]?\w+)*@\w+([/.-]?\w+)*(\.\w{2,3})+$/;
+export const phoneRegExp =
+  /^[+]?[(]?[0-9]{2,4}[)]?[-\s.(]*[0-9]{2,3}[)-\s.]*[0-9]{2,6}?[-\s.]?[0-9]{2,6}[-\s.]?[0-9]{0,6}$/;
 export const breakpoints = {
   mob: 375,
   tab: 768,
