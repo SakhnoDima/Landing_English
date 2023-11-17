@@ -24,7 +24,9 @@ const ModalStyles = styled(motion.div)`
     height: 24px;
     cursor: pointer;
   }
-
+  @media screen and (orientation: landscape) {
+    margin-top: 80px;
+  }
   @media screen and (min-width: 768px) {
     padding-inline: 64px;
     .bg {
