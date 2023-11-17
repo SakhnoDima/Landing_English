@@ -8,10 +8,10 @@ import Preload from './Preload/Preload';
 import WhyMe from './WhyMe/WhyMe';
 import { Modal } from './Modal/Modal';
 import { instance } from 'helpers/axios';
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 
 export const App = () => {
-  useEffect(() => {
+  useLayoutEffect(() => {
     instance.get('/sendemail').catch(error => {
       console.error();
     });
