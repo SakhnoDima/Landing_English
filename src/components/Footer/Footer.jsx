@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { ReactComponent as Mail } from '../../images/svg/mail.svg';
 import { ReactComponent as Telegram } from '../../images/svg/send.svg';
 import Foto from '../../images/Victoria.png';
+
 import {
   NameStyled,
   StyledFooter,
@@ -35,7 +37,6 @@ const Footer = () => {
               </li>
             </StyledList>
           </div>
-
           <StyledFoto src={Foto} alt="Victoria Chuchmii" />
         </Wrapper>
       </Container>
