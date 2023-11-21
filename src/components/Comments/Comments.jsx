@@ -28,7 +28,6 @@ import { animationSettings } from 'constants/constants';
 const Comments = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isExpanded, setIsExpanded] = useState({});
-  // const [commentIndex, setCommentIndex] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
@@ -66,7 +65,6 @@ const Comments = () => {
   };
 
   const settings = {
-    // initialSlide: commentIndex,
     infinity: true,
     lazyLoading: true,
     speed: 300,
@@ -82,7 +80,6 @@ const Comments = () => {
     autoplay: true,
     autoplaySpeed: 5000,
     beforeChange: (current, next) => {
-      // setCommentIndex(next);
       setActiveSlide(next);
     },
   };
