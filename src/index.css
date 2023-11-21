@@ -22,6 +22,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 a {
   text-decoration: none;
 }
@@ -42,10 +43,11 @@ ol {
   padding-left: 0;
   list-style: none;
 }
+
 img {
   display: block;
-  /* max-width: 100%; */
 }
+
 button {
   cursor: pointer;
   background-color: inherit;

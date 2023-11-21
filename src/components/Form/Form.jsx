@@ -1,46 +1,21 @@
 import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
+
+import Button from 'components/Button/Button';
+import { instance } from '../../helpers/axios';
+import { getLetterData } from '../../helpers/getLetterData';
+import { SignUpSchema } from 'constants/schemas';
 
 import { FormWrapper, Heading, InputWrap, StyledForm } from './Form.styled';
-import Button from 'components/Button/Button';
-
-import { instance } from '../../helpers/axios';
-import { emailRegexp, phoneRegExp } from 'constants/constants';
 
 const Forma = ({ setSubmitted }) => {
-  const SignupSchema = Yup.object().shape({
-    name: Yup.string(),
-
-    phone: Yup.string().matches(phoneRegExp),
-
-    email: Yup.string()
-      .email('Invalid email')
-      .matches(emailRegexp)
-      .required('Required'),
-
-    message: Yup.string(),
-  });
-
   const handleSubmit = (values, { resetForm }) => {
-    const client = {};
-
-    const inputNames = ['name', 'email', 'phone', 'message'];
-
-    inputNames.forEach(name => {
-      if (values[name]) {
-        client[name] = values[name];
-      }
-    });
-
     instance
-      .post('/sendemail', { ...client })
+      .post('/sendemail', { ...getLetterData(values) })
       .then(() => {
         resetForm();
         setSubmitted();
       })
-      .catch(error => {
-        console.error('Error submitting form:', error);
-      });
+      .catch(error => {});
   };
 
   return (
@@ -51,7 +26,7 @@ const Forma = ({ setSubmitted }) => {
         email: '',
         message: '',
       }}
-      validationSchema={SignupSchema}
+      validationSchema={SignUpSchema}
       onSubmit={handleSubmit}
     >
       {({ errors, touched }) => (
@@ -64,34 +39,46 @@ const Forma = ({ setSubmitted }) => {
               $error={errors.email && touched.email ? 'true' : 'false'}
               $phoneError={errors.phone ? 'true' : 'false'}
             >
-              <Field
-                type="text"
-                name="name"
-                placeholder="Enter Your name"
-                autoComplete="off"
-              />
-              <Field
-                type="text"
-                name="phone"
-                placeholder="Enter Your phone"
-                autoComplete="off"
-              />
-              <Field
-                type="text"
-                name="email"
-                placeholder="Enter Your email address"
-                autoComplete="off"
-                required
-              />
+              <label htmlFor="name">
+                <Field
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Enter Your name"
+                  autoComplete="off"
+                />
+              </label>
+              <label style={{ width: '100%' }} htmlFor="phone">
+                <Field
+                  id="phone"
+                  type="text"
+                  name="phone"
+                  placeholder="Enter Your phone"
+                  autoComplete="off"
+                />
+              </label>
+              <label htmlFor="email">
+                <Field
+                  id="email"
+                  type="text"
+                  name="email"
+                  placeholder="Enter Your email address"
+                  autoComplete="off"
+                  required
+                />
+              </label>
               <span>*</span>
-              <Field
-                as="textarea"
-                name="message"
-                placeholder="Enter Your message"
-                autoComplete="off"
-                cols="30"
-                rows="10"
-              />
+              <label htmlFor="message">
+                <Field
+                  id="message"
+                  as="textarea"
+                  name="message"
+                  placeholder="Enter Your message"
+                  autoComplete="off"
+                  cols="30"
+                  rows="10"
+                />
+              </label>
             </InputWrap>
 
             <Button type="button" $type={'secondary'} $size={'form'}>

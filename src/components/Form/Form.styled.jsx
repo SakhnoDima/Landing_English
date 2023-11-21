@@ -28,6 +28,11 @@ export const InputWrap = styled.div`
   position: relative;
   gap: 16px;
   width: 295px;
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+  }
 
   input[name='phone'] {
     ${({ $phoneError }) =>
