@@ -66,8 +66,9 @@ const Forma = ({ setSubmitted }) => {
                   autoComplete="off"
                   required
                 />
+                <span>*</span>
               </label>
-              <span>*</span>
+
               <label htmlFor="message">
                 <Field
                   id="message"
