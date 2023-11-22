@@ -29,7 +29,6 @@ const Comments = () => {
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const [isExpanded, setIsExpanded] = useState({});
-  // const [commentIndex, setCommentIndex] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
 
   const maxLines = !isTablet && !isDesktop < 768 ? '11' : '7';
@@ -54,7 +53,6 @@ const Comments = () => {
   };
 
   const settings = {
-    // initialSlide: commentIndex,
     infinity: true,
     lazyLoading: true,
     speed: 300,
@@ -70,7 +68,6 @@ const Comments = () => {
     autoplay: true,
     autoplaySpeed: 5000,
     beforeChange: (current, next) => {
-      // setCommentIndex(next);
       setActiveSlide(next);
     },
   };
