@@ -170,7 +170,7 @@ export const HeroSection = ({ children }) => {
     <Hero
       id="hero"
       initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1, transition: { duration: 0.7, delay: 2 } }}
+      animate={{ y: 0, opacity: 1, transition: { duration: 0.7, delay: 2.4 } }}
     >
       {children}
     </Hero>

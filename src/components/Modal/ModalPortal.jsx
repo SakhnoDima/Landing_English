@@ -2,14 +2,14 @@ import { createPortal } from 'react-dom';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
+import { useModal } from 'hooks/ModalContext';
+import Form from '../Form/Form';
+import PopUp from 'components/PopUp/PopUp';
+
 import { ReactComponent as SvgBgLg } from 'images/svg/form_svg.svg';
 import { ReactComponent as SvgBgSm } from 'images/svg/form_sm_svg.svg';
 import { ReactComponent as Close } from 'images/svg/x.svg';
-
 import ModalPlaceholder, { Overlay } from './Modal.styled';
-import Form from '../Form/Form';
-import { useModal } from 'hooks/ModalContext';
-import PopUp from 'components/PopUp/PopUp';
 
 const ModalPortal = () => {
   const { closeModal } = useModal();

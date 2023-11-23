@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import NavMenu, { NavStyles, UlComponent } from './Navmenu.styled';
-import { ReactComponent as Close } from '../../images/svg/x.svg';
 import { sectionLinks } from 'constants/constants';
+
+import { ReactComponent as Close } from '../../images/svg/x.svg';
+import NavMenu, { NavStyles, UlComponent } from './Navmenu.styled';
 
 const Nav = ({ toggleMenu, isVisible }) => {
   const [activeLink, setActiveLink] = useState('');
@@ -41,11 +42,7 @@ const Nav = ({ toggleMenu, isVisible }) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     const handleKeyDown = e => {
-      if (
-        e.code === 'ArrowUp' ||
-        e.code === 'ArrowDown' ||
-        e.code === 'Enter'
-      ) {
+      if (e.code !== 'Escape') {
         handleChangeActiveLink(e.code);
       }
       if (e.code === 'Escape') toggleMenu();
