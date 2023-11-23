@@ -1,23 +1,8 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 import { ReactComponent as Logo } from '../../images/svg/logo.svg';
-
-import PreloadComponent from './Preload.styled';
-import { useRef } from 'react';
-import { useEffect } from 'react';
-
-const styles = {
-  width: '100vw',
-  height: '100vh',
-  background: 'var(--background-color-white)',
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  zIndex: 10000,
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-};
+import PreloadComponent, { PreloadOverlay } from './Preload.styled';
 
 const logo = {
   initial: { opacity: 1 },
@@ -31,22 +16,16 @@ const logo = {
 };
 
 const Preload = () => {
-  const ref = useRef();
-
-  useEffect(() => {
-    setTimeout(() => {
-      ref.current.style.display = 'none';
-    }, 2000);
-  });
+  const [isAnimationComplete, setAnimationComplete] = useState(false);
 
   return (
-    <div ref={ref} style={styles}>
-      <PreloadComponent>
+    <PreloadOverlay $isComplete={isAnimationComplete}>
+      <PreloadComponent setComplete={() => setAnimationComplete(true)}>
         <motion.div variants={logo}>
           <Logo className="logo" />
         </motion.div>
       </PreloadComponent>
-    </div>
+    </PreloadOverlay>
   );
 };
 

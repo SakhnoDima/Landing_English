@@ -15,6 +15,19 @@ const PreloadStyles = styled(motion.div)`
   }
 `;
 
+export const PreloadOverlay = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: var(--background-color-white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  display: ${({ $isComplete }) => ($isComplete ? 'none' : 'flex')};
+  justify-content: center;
+  align-items: center;
+`;
+
 const container = {
   initial: { opacity: 0 },
   show: {
@@ -23,8 +36,13 @@ const container = {
   },
 };
 
-const PreloadComponent = ({ children }) => (
-  <PreloadStyles variants={container} initial="initial" animate="show">
+const PreloadComponent = ({ children, setComplete }) => (
+  <PreloadStyles
+    variants={container}
+    initial="initial"
+    animate="show"
+    onAnimationComplete={() => setComplete()}
+  >
     {children}
   </PreloadStyles>
 );

@@ -18,10 +18,15 @@ export const StyledButton = styled.button`
   justify-content: center;
   align-items: center;
   gap: 8px;
-  color: ${({ $type }) =>
-    $type === 'origin' ? ' var(--orange-primary)' : 'var(--white)'};
+  color: ${({ $type, $isError }) =>
+    $type === 'origin'
+      ? $isError
+        ? 'var(--black)'
+        : ' var(--orange-primary)'
+      : 'var(--white)'};
   border-radius: 60px;
-  border: 2px solid var(--orange-primary);
+  border: 2px solid
+    ${({ $isError }) => ($isError ? 'var(--black)' : 'var(--orange-primary)')};
 
   font-family: Anek Bangla;
   font-size: 24px;
@@ -32,14 +37,22 @@ export const StyledButton = styled.button`
   &:hover {
     color: ${({ $type }) =>
       $type !== 'origin' ? ' var(--orange-primary)' : 'var(--white)'};
-    background-color: ${({ $type }) =>
-      $type === 'origin' ? 'var(--orange-primary)' : 'var(--white)'};
+    background-color: ${({ $type, $isError }) =>
+      $type === 'origin'
+        ? $isError
+          ? 'var(--black)'
+          : 'var(--orange-primary)'
+        : 'var(--white)'};
   }
   &:active {
     border-color: ${({ $type }) =>
       $type !== 'origin' ? 'var(--orange-primary)' : 'var(--orange-secondary)'};
-    background-color: ${({ $type }) =>
-      $type === 'origin' ? 'var(--orange-secondary)' : '#FFF2EF'};
+    background-color: ${({ $type, $isError }) =>
+      $type === 'origin'
+        ? $isError
+          ? 'var(--black)'
+          : 'var(--orange-secondary)'
+        : '#FFF2EF'};
   }
   @media screen and (min-width: 768px) {
     width: ${({ $width }) => {

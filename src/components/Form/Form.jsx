@@ -15,7 +15,9 @@ const Forma = ({ setSubmitted }) => {
         resetForm();
         setSubmitted();
       })
-      .catch(error => {});
+      .catch(error => {
+        setSubmitted(true);
+      });
   };
 
   return (

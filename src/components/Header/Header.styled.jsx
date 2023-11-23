@@ -13,7 +13,7 @@ const HeaderContainerStyles = styled(motion.div)`
 export const HeaderContainer = ({ children }) => (
   <HeaderContainerStyles
     initial={{ y: -100, opacity: 0 }}
-    animate={{ y: 0, opacity: 1, transition: { duration: 0.5, delay: 1.2 } }}
+    animate={{ y: 0, opacity: 1, transition: { duration: 0.5, delay: 2.4 } }}
   >
     {children}
   </HeaderContainerStyles>

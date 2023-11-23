@@ -15,6 +15,8 @@ const PopupStyles = styled(motion.div)`
     line-height: 33px;
     letter-spacing: 0em;
     text-align: center;
+    color: ${({ $isError }) =>
+      $isError ? 'var(--error-text-color)' : 'var(--black)'};
   }
 
   @media screen and (min-width: 768px) {
@@ -30,6 +32,8 @@ const PopupStyles = styled(motion.div)`
   }
 `;
 
-const PopUpWindow = ({ children }) => <PopupStyles>{children}</PopupStyles>;
+const PopUpWindow = ({ children, $isError }) => (
+  <PopupStyles $isError={$isError}>{children}</PopupStyles>
+);
 
 export default PopUpWindow;

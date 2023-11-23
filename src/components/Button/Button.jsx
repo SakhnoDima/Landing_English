@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyledButton } from './Button.styled';
 
-const Button = ({ $type, $size, children, handleClick }) => {
+const Button = ({ $type, $isError = false, $size, children, handleClick }) => {
   return (
     <StyledButton
       type="submit"
       $type={$type}
+      $isError={$isError}
       $width={$size}
       onClick={handleClick}
     >

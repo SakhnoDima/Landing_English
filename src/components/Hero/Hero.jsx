@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ReactComponent as CloseIcon } from '../../images/svg/close-text-arrow.svg';
 
+import { useModal } from '../../hooks/ModalContext';
+
+import Button from '../Button/Button';
+import Container from 'components/Container/Container';
+import { LogoAnimate } from './LogoAnimate';
+
+import { ReactComponent as CloseIcon } from '../../images/svg/close-text-arrow.svg';
 import {
   HeroSection,
   HeroDescription,
@@ -9,10 +15,6 @@ import {
   ReadMoreBtn,
   CloseTextBtn,
 } from './Hero.styled';
-import { useModal } from '../../hooks/ModalContext';
-import Button from '../Button/Button';
-import { LogoAnimate } from './LogoAnimate';
-import Container from 'components/Container/Container';
 
 const Hero = () => {
   const [isReadMore, setReadMore] = useState(false);
@@ -23,14 +25,14 @@ const Hero = () => {
       <HeroSection>
         <motion.p
           initial={{ y: 100 }}
-          animate={{ y: 0, transition: { duration: 0.7, delay: 2 } }}
+          animate={{ y: 0, transition: { duration: 0.7, delay: 2.4 } }}
           className="hero__title"
         >
           Hello there!
         </motion.p>
         <motion.h1
           initial={{ y: 100 }}
-          animate={{ y: 0, transition: { duration: 0.7, delay: 2.1 } }}
+          animate={{ y: 0, transition: { duration: 0.7, delay: 2.5 } }}
           className="hero__title"
         >
           I'm Victoria, your Language Coach
