@@ -14,6 +14,7 @@ import ModalPlaceholder, { Overlay } from './Modal.styled';
 const ModalPortal = () => {
   const { closeModal } = useModal();
   const [isSubmitted, setSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   useEffect(() => {
@@ -32,9 +33,14 @@ const ModalPortal = () => {
     <Overlay handleClick={closeModal}>
       <ModalPlaceholder $isPopUp={isSubmitted}>
         {isSubmitted ? (
-          <PopUp />
+          <PopUp isError={isError} />
         ) : (
-          <Form setSubmitted={() => setSubmitted(true)} />
+          <Form
+            setSubmitted={(isError = false) => {
+              setIsError(isError);
+              setSubmitted(true);
+            }}
+          />
         )}
         <Close className="close" onClick={closeModal} />
         {isDesktop && !isSubmitted ? (
